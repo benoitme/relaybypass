@@ -1,0 +1,33 @@
+### HEXMate logfile and output summary ###
+### Memory Usage ###
+ Unused memory ranges:
+  2h - 675h
+  7FEh - 400Dh
+  4010h - 403Fh
+  
+ dist/default/production\Relay_Bypass_on_press.X.production.hex ranges:
+  0h - 1h
+  676h - 7FDh
+  400Eh - 400Fh
+  
+### Hex Memory Map ###
+ Legend:
+  - = Unused memory
+  F = Filled ROM
+  S = Stored serial code
+  A = Stored ASCII string
+  R = Reserved for checksum
+  C = Stored checksum result
+  T = Trailing code
+  & = Find & replace opcode
+  X = Find & delete opcode
+  1 = dist/default/production\Relay_Bypass_on_press.X.production.hex
+00000000: 11--------------------------------------------------------------
+00000640: ------------------------------------------------------1111111111
+00000680: 1111111111111111111111111111111111111111111111111111111111111111
+000006C0: 1111111111111111111111111111111111111111111111111111111111111111
+00000700: 1111111111111111111111111111111111111111111111111111111111111111
+00000740: 1111111111111111111111111111111111111111111111111111111111111111
+00000780: 1111111111111111111111111111111111111111111111111111111111111111
+000007C0: 11111111111111111111111111111111111111111111111111111111111111--
+00004000: --------------11------------------------------------------------
