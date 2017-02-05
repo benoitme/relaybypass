@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v1.36\dat\en_msgs.txt -cs \
   -h+dist/default/production\Relay_Bypass_on_press.X.production.sym \
   --cmf=dist/default/production\Relay_Bypass_on_press.X.production.cmf -z \
-  -Q12F675 -oC:\Users\Benoit\AppData\Local\Temp\s2ng.2 \
+  -Q12F675 -oC:\Users\Benoit\AppData\Local\Temp\s548.2 \
   -Mdist/default/production/Relay_Bypass_on_press.X.production.map -E1 \
   -ver=XC8 -ASTACK=026h-05dh -pstack=STACK -ACODE=00h-03FEh \
   -ASTRCODE=00h-03FEh -ASTRING=00h-0FFhx3,0300h-03FEh \
@@ -16,7 +16,7 @@ Linker command line:
   -pconfig=CONFIG -DCONFIG=2 -AIDLOC=02000h-02003h -pidloc=IDLOC -DIDLOC=2 \
   -AEEDATA=00h-07Fh/02100h -peeprom_data=EEDATA -DEEDATA=2 -posccal=03FFh \
   -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 -k \
-  C:\Users\Benoit\AppData\Local\Temp\s2ng.obj \
+  C:\Users\Benoit\AppData\Local\Temp\s548.obj \
   dist/default/production\Relay_Bypass_on_press.X.production.obj 
 
 Object code version is 3.11
@@ -26,12 +26,12 @@ Machine type is 12F675
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\Benoit\AppData\Local\Temp\s2ng.obj
+C:\Users\Benoit\AppData\Local\Temp\s548.obj
                 end_init                              0        0        1        0       0
                 config                             2007     2007        1     400E       0
 dist/default/production\Relay_Bypass_on_press.X.production.obj
                 cinit                               3FD      3FD        2      7FA       0
-                maintext                            33B      33B       C2      676       0
+                maintext                            327      327       D6      64E       0
                 cstackBANK0                          20       20        6       20       1
 
 TOTAL           Name                               Link     Load   Length     Space
@@ -40,7 +40,7 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   CODE           
                 end_init                              0        0        1         0
                 cinit                               3FD      3FD        2         0
-                maintext                            33B      33B       C2         0
+                maintext                            327      327       D6         0
 
         CLASS   STRCODE        
 
@@ -79,7 +79,7 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
 
                 reset_vec                      000000  000001  000001         0       0  CODE        2
                 cstackBANK0                    000020  000006  000026        20       1  BANK0       1
-                maintext                       00033B  0000C2  0003FD       676       0  CODE        2
+                maintext                       000327  0000D6  0003FD       64E       0  CODE        2
                 cinit                          0003FD  000002  0003FF       7FA       0  CODE        2
                 config                         002007  000001  002008      400E       0  CONFIG      2
 
@@ -88,17 +88,17 @@ UNUSED ADDRESS RANGES
 
         Name                Unused          Largest block    Delta
         BANK0            0026-005D             38           1
-        CODE             0001-033A            33A           2
-        CONST            0001-033A            100           2
+        CODE             0001-0326            326           2
+        CONST            0001-0326            100           2
         EEDATA           2100-217F             80           2
-        ENTRY            0001-033A            100           2
+        ENTRY            0001-0326            100           2
         IDLOC            2000-2003              4           2
         RAM              0026-005D             38           1
         SFR0             0000-001F             20           1
         SFR1             0080-00DD             5E           1
         STACK            0026-005D             38           1
-        STRCODE          0001-033A            33A           2
-        STRING           0001-033A            100           2
+        STRCODE          0001-0326            326           2
+        STRING           0001-0326            100           2
 
                                   Symbol Table
 
@@ -195,9 +195,9 @@ __end_of__initialization cinit       03FD
 __end_of_main            maintext    03FD
 __initialization         cinit       03FD
 __pcstackBANK0           cstackBANK0 0020
-__pmaintext              maintext    033B
+__pmaintext              maintext    0327
 __size_of_main           (abs)       0000
-_main                    maintext    033B
+_main                    maintext    0327
 btemp                    (abs)       005E
 end_of_initialization    cinit       03FD
 intlevel0                functab     0000
@@ -274,9 +274,9 @@ MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 relayonpress.c
-		_main          		CODE           	033B	0000	195
+		_main          		CODE           	0327	0000	215
 
-relayonpress.c estimated size: 195
+relayonpress.c estimated size: 215
 
 shared
 		__initialization		CODE           	03FD	0000	1

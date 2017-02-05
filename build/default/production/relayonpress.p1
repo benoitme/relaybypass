@@ -881,9 +881,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "52
 [e $ ! == -> _GP1 `i -> 0 `i 94  ]
 {
-[; ;relayonpress.c: 53: _delay((unsigned long)((5)*(4000000/4000.0)));
+[; ;relayonpress.c: 53: _delay((unsigned long)((15)*(4000000/4000.0)));
 "53
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[e ( __delay (1 -> * -> -> 15 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 [; ;relayonpress.c: 54: if(GP1 == 0) {
 "54
 [e $ ! == -> _GP1 `i -> 0 `i 95  ]
@@ -891,243 +891,265 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;relayonpress.c: 55: press_switch = press_switch + 1;
 "55
 [e = _press_switch -> + -> _press_switch `i -> 1 `i `uc ]
+[; ;relayonpress.c: 56: if(press_switch>10) {
 "56
-}
-[e :U 95 ]
-"57
-}
-[e :U 94 ]
-[; ;relayonpress.c: 56: }
-[; ;relayonpress.c: 57: }
-[; ;relayonpress.c: 58: if(press_switch == 1) {
-"58
-[e $ ! == -> _press_switch `i -> 1 `i 96  ]
+[e $ ! > -> _press_switch `i -> 10 `i 96  ]
 {
-[; ;relayonpress.c: 59: changestate = 1;
-"59
-[e = _changestate -> -> 1 `i `uc ]
-[; ;relayonpress.c: 60: press_switch = press_switch + 1;
-"60
-[e = _press_switch -> + -> _press_switch `i -> 1 `i `uc ]
-"61
+[; ;relayonpress.c: 57: press_switch = 10;
+"57
+[e = _press_switch -> -> 10 `i `uc ]
+"58
 }
 [e :U 96 ]
-[; ;relayonpress.c: 61: }
-[; ;relayonpress.c: 62: if(GP1 == 1) {
-"62
-[e $ ! == -> _GP1 `i -> 1 `i 97  ]
-{
-[; ;relayonpress.c: 63: _delay((unsigned long)((5)*(4000000/4000.0)));
-"63
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-[; ;relayonpress.c: 64: if(GP1 == 1) {
-"64
-[e $ ! == -> _GP1 `i -> 1 `i 98  ]
-{
-[; ;relayonpress.c: 65: press_switch = 0;
-"65
-[e = _press_switch -> -> 0 `i `uc ]
-"66
+"59
 }
-[e :U 98 ]
-"67
+[e :U 95 ]
+"60
+}
+[e :U 94 ]
+[; ;relayonpress.c: 58: }
+[; ;relayonpress.c: 59: }
+[; ;relayonpress.c: 60: }
+[; ;relayonpress.c: 61: if(press_switch == 1) {
+"61
+[e $ ! == -> _press_switch `i -> 1 `i 97  ]
+{
+[; ;relayonpress.c: 62: changestate = 1;
+"62
+[e = _changestate -> -> 1 `i `uc ]
+[; ;relayonpress.c: 63: press_switch = 2;
+"63
+[e = _press_switch -> -> 2 `i `uc ]
+"64
 }
 [e :U 97 ]
+[; ;relayonpress.c: 64: }
+[; ;relayonpress.c: 65: if(GP1 == 1) {
+"65
+[e $ ! == -> _GP1 `i -> 1 `i 98  ]
+{
+[; ;relayonpress.c: 66: _delay((unsigned long)((15)*(4000000/4000.0)));
+"66
+[e ( __delay (1 -> * -> -> 15 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;relayonpress.c: 67: if(GP1 == 1) {
+"67
+[e $ ! == -> _GP1 `i -> 1 `i 99  ]
+{
+[; ;relayonpress.c: 68: press_switch = 0;
 "68
-}
-[e :U 93 ]
-[; ;relayonpress.c: 66: }
-[; ;relayonpress.c: 67: }
-[; ;relayonpress.c: 68: }
-[; ;relayonpress.c: 71: if(temporary == 1) {
-"71
-[e $ ! == -> _temporary `i -> 1 `i 99  ]
-{
-[; ;relayonpress.c: 72: if(GP1 == 0) {
-"72
-[e $ ! == -> _GP1 `i -> 0 `i 100  ]
-{
-[; ;relayonpress.c: 73: _delay((unsigned long)((5)*(4000000/4000.0)));
-"73
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-[; ;relayonpress.c: 74: if(GP1 == 0) {
-"74
-[e $ ! == -> _GP1 `i -> 0 `i 101  ]
-{
-[; ;relayonpress.c: 75: press_switch = press_switch + 1;
-"75
-[e = _press_switch -> + -> _press_switch `i -> 1 `i `uc ]
-"76
-}
-[e :U 101 ]
-"77
-}
-[e :U 100 ]
-[; ;relayonpress.c: 76: }
-[; ;relayonpress.c: 77: }
-[; ;relayonpress.c: 78: if(GP1 == 1) {
-"78
-[e $ ! == -> _GP1 `i -> 1 `i 102  ]
-{
-[; ;relayonpress.c: 79: _delay((unsigned long)((5)*(4000000/4000.0)));
-"79
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-[; ;relayonpress.c: 80: if(GP1 == 1) {
-"80
-[e $ ! == -> _GP1 `i -> 1 `i 103  ]
-{
-[; ;relayonpress.c: 81: state = 0;
-"81
-[e = _state -> -> 0 `i `uc ]
-[; ;relayonpress.c: 82: press_switch = 0;
-"82
 [e = _press_switch -> -> 0 `i `uc ]
-"83
-}
-[e :U 103 ]
-"84
-}
-[e :U 102 ]
-[; ;relayonpress.c: 83: }
-[; ;relayonpress.c: 84: }
-[; ;relayonpress.c: 85: if(press_switch == 1) {
-"85
-[e $ ! == -> _press_switch `i -> 1 `i 104  ]
-{
-[; ;relayonpress.c: 86: changestate = 1;
-"86
-[e = _changestate -> -> 1 `i `uc ]
-[; ;relayonpress.c: 87: press_switch = press_switch + 1;
-"87
-[e = _press_switch -> + -> _press_switch `i -> 1 `i `uc ]
-"88
-}
-[e :U 104 ]
-"89
+"69
 }
 [e :U 99 ]
-[; ;relayonpress.c: 88: }
-[; ;relayonpress.c: 89: }
-[; ;relayonpress.c: 92: if(changestate == 1) {
-"92
-[e $ ! == -> _changestate `i -> 1 `i 105  ]
-{
-[; ;relayonpress.c: 93: if(state == 0) {
-"93
-[e $ ! == -> _state `i -> 0 `i 106  ]
-{
-[; ;relayonpress.c: 94: GP2 = 1;
-"94
-[e = _GP2 -> -> 1 `i `b ]
-[; ;relayonpress.c: 95: _delay((unsigned long)((50)*(4000000/4000.0)));
-"95
-[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-[; ;relayonpress.c: 96: GP0 = 1;
-"96
-[e = _GP0 -> -> 1 `i `b ]
-[; ;relayonpress.c: 97: GP5 = 1;
-"97
-[e = _GP5 -> -> 1 `i `b ]
-[; ;relayonpress.c: 98: GP4 = 0;
-"98
-[e = _GP4 -> -> 0 `i `b ]
-[; ;relayonpress.c: 99: _delay((unsigned long)((30)*(4000000/4000.0)));
-"99
-[e ( __delay (1 -> * -> -> 30 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-[; ;relayonpress.c: 100: GP2 = 0;
-"100
-[e = _GP2 -> -> 0 `i `b ]
-[; ;relayonpress.c: 101: state = 1;
-"101
-[e = _state -> -> 1 `i `uc ]
-"102
+"70
 }
-[; ;relayonpress.c: 102: }
-[e $U 107  ]
-"103
-[e :U 106 ]
-[; ;relayonpress.c: 103: else {
+[e :U 98 ]
+"71
+}
+[e :U 93 ]
+[; ;relayonpress.c: 69: }
+[; ;relayonpress.c: 70: }
+[; ;relayonpress.c: 71: }
+[; ;relayonpress.c: 74: if(temporary == 1) {
+"74
+[e $ ! == -> _temporary `i -> 1 `i 100  ]
 {
-[; ;relayonpress.c: 104: GP2 = 1;
-"104
-[e = _GP2 -> -> 1 `i `b ]
-[; ;relayonpress.c: 105: _delay((unsigned long)((50)*(4000000/4000.0)));
-"105
-[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-[; ;relayonpress.c: 106: GP0 = 0;
-"106
-[e = _GP0 -> -> 0 `i `b ]
-[; ;relayonpress.c: 107: GP5 = 0;
-"107
-[e = _GP5 -> -> 0 `i `b ]
-[; ;relayonpress.c: 108: GP4 = 0;
-"108
-[e = _GP4 -> -> 0 `i `b ]
-[; ;relayonpress.c: 109: _delay((unsigned long)((30)*(4000000/4000.0)));
-"109
-[e ( __delay (1 -> * -> -> 30 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-[; ;relayonpress.c: 110: GP2 = 0;
-"110
-[e = _GP2 -> -> 0 `i `b ]
-[; ;relayonpress.c: 111: state = 0;
-"111
+[; ;relayonpress.c: 75: if(GP1 == 0) {
+"75
+[e $ ! == -> _GP1 `i -> 0 `i 101  ]
+{
+[; ;relayonpress.c: 76: _delay((unsigned long)((15)*(4000000/4000.0)));
+"76
+[e ( __delay (1 -> * -> -> 15 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;relayonpress.c: 77: if(GP1 == 0) {
+"77
+[e $ ! == -> _GP1 `i -> 0 `i 102  ]
+{
+[; ;relayonpress.c: 78: press_switch = press_switch + 1;
+"78
+[e = _press_switch -> + -> _press_switch `i -> 1 `i `uc ]
+[; ;relayonpress.c: 79: if(press_switch>10) {
+"79
+[e $ ! > -> _press_switch `i -> 10 `i 103  ]
+{
+[; ;relayonpress.c: 80: press_switch = 10;
+"80
+[e = _press_switch -> -> 10 `i `uc ]
+"81
+}
+[e :U 103 ]
+"82
+}
+[e :U 102 ]
+"83
+}
+[e :U 101 ]
+[; ;relayonpress.c: 81: }
+[; ;relayonpress.c: 82: }
+[; ;relayonpress.c: 83: }
+[; ;relayonpress.c: 84: if(GP1 == 1) {
+"84
+[e $ ! == -> _GP1 `i -> 1 `i 104  ]
+{
+[; ;relayonpress.c: 85: _delay((unsigned long)((15)*(4000000/4000.0)));
+"85
+[e ( __delay (1 -> * -> -> 15 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;relayonpress.c: 86: if(GP1 == 1) {
+"86
+[e $ ! == -> _GP1 `i -> 1 `i 105  ]
+{
+[; ;relayonpress.c: 87: state = 0;
+"87
 [e = _state -> -> 0 `i `uc ]
-"112
-}
-[e :U 107 ]
-[; ;relayonpress.c: 112: }
-[; ;relayonpress.c: 113: _delay((unsigned long)((10)*(4000000/4000.0)));
-"113
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-[; ;relayonpress.c: 114: changestate=0;
-"114
-[e = _changestate -> -> 0 `i `uc ]
-"115
+[; ;relayonpress.c: 88: press_switch = 0;
+"88
+[e = _press_switch -> -> 0 `i `uc ]
+"89
 }
 [e :U 105 ]
-[; ;relayonpress.c: 115: }
-[; ;relayonpress.c: 118: if (state == 1) {
-"118
-[e $ ! == -> _state `i -> 1 `i 108  ]
-{
-[; ;relayonpress.c: 119: GP0 = 1;
-"119
-[e = _GP0 -> -> 1 `i `b ]
-[; ;relayonpress.c: 120: GP5 = 1;
-"120
-[e = _GP5 -> -> 1 `i `b ]
-[; ;relayonpress.c: 121: GP4 = 0;
-"121
-[e = _GP4 -> -> 0 `i `b ]
-"122
+"90
 }
-[; ;relayonpress.c: 122: }
-[e $U 109  ]
-"123
-[e :U 108 ]
-[; ;relayonpress.c: 123: else {
+[e :U 104 ]
+[; ;relayonpress.c: 89: }
+[; ;relayonpress.c: 90: }
+[; ;relayonpress.c: 91: if(press_switch == 1) {
+"91
+[e $ ! == -> _press_switch `i -> 1 `i 106  ]
 {
-[; ;relayonpress.c: 124: GP0 = 0;
-"124
-[e = _GP0 -> -> 0 `i `b ]
-[; ;relayonpress.c: 125: GP5 = 0;
-"125
-[e = _GP5 -> -> 0 `i `b ]
-[; ;relayonpress.c: 126: GP4 = 0;
-"126
+[; ;relayonpress.c: 92: changestate = 1;
+"92
+[e = _changestate -> -> 1 `i `uc ]
+[; ;relayonpress.c: 93: press_switch = 2;
+"93
+[e = _press_switch -> -> 2 `i `uc ]
+"94
+}
+[e :U 106 ]
+"95
+}
+[e :U 100 ]
+[; ;relayonpress.c: 94: }
+[; ;relayonpress.c: 95: }
+[; ;relayonpress.c: 98: if(changestate == 1) {
+"98
+[e $ ! == -> _changestate `i -> 1 `i 107  ]
+{
+[; ;relayonpress.c: 99: if(state == 0) {
+"99
+[e $ ! == -> _state `i -> 0 `i 108  ]
+{
+[; ;relayonpress.c: 100: GP2 = 1;
+"100
+[e = _GP2 -> -> 1 `i `b ]
+[; ;relayonpress.c: 101: _delay((unsigned long)((20)*(4000000/4000.0)));
+"101
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;relayonpress.c: 102: GP0 = 1;
+"102
+[e = _GP0 -> -> 1 `i `b ]
+[; ;relayonpress.c: 103: GP5 = 1;
+"103
+[e = _GP5 -> -> 1 `i `b ]
+[; ;relayonpress.c: 104: GP4 = 0;
+"104
 [e = _GP4 -> -> 0 `i `b ]
-"127
+[; ;relayonpress.c: 105: _delay((unsigned long)((20)*(4000000/4000.0)));
+"105
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;relayonpress.c: 106: GP2 = 0;
+"106
+[e = _GP2 -> -> 0 `i `b ]
+[; ;relayonpress.c: 107: state = 1;
+"107
+[e = _state -> -> 1 `i `uc ]
+"108
+}
+[; ;relayonpress.c: 108: }
+[e $U 109  ]
+"109
+[e :U 108 ]
+[; ;relayonpress.c: 109: else {
+{
+[; ;relayonpress.c: 110: GP2 = 1;
+"110
+[e = _GP2 -> -> 1 `i `b ]
+[; ;relayonpress.c: 111: _delay((unsigned long)((20)*(4000000/4000.0)));
+"111
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;relayonpress.c: 112: GP0 = 0;
+"112
+[e = _GP0 -> -> 0 `i `b ]
+[; ;relayonpress.c: 113: GP5 = 0;
+"113
+[e = _GP5 -> -> 0 `i `b ]
+[; ;relayonpress.c: 114: GP4 = 0;
+"114
+[e = _GP4 -> -> 0 `i `b ]
+[; ;relayonpress.c: 115: _delay((unsigned long)((20)*(4000000/4000.0)));
+"115
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;relayonpress.c: 116: GP2 = 0;
+"116
+[e = _GP2 -> -> 0 `i `b ]
+[; ;relayonpress.c: 117: state = 0;
+"117
+[e = _state -> -> 0 `i `uc ]
+"118
 }
 [e :U 109 ]
+[; ;relayonpress.c: 118: }
+[; ;relayonpress.c: 119: _delay((unsigned long)((10)*(4000000/4000.0)));
+"119
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;relayonpress.c: 120: changestate=0;
+"120
+[e = _changestate -> -> 0 `i `uc ]
+"121
+}
+[e :U 107 ]
+[; ;relayonpress.c: 121: }
+[; ;relayonpress.c: 124: if (state == 1) {
+"124
+[e $ ! == -> _state `i -> 1 `i 110  ]
+{
+[; ;relayonpress.c: 125: GP0 = 1;
+"125
+[e = _GP0 -> -> 1 `i `b ]
+[; ;relayonpress.c: 126: GP5 = 1;
+"126
+[e = _GP5 -> -> 1 `i `b ]
+[; ;relayonpress.c: 127: GP4 = 0;
+"127
+[e = _GP4 -> -> 0 `i `b ]
 "128
+}
+[; ;relayonpress.c: 128: }
+[e $U 111  ]
+"129
+[e :U 110 ]
+[; ;relayonpress.c: 129: else {
+{
+[; ;relayonpress.c: 130: GP0 = 0;
+"130
+[e = _GP0 -> -> 0 `i `b ]
+[; ;relayonpress.c: 131: GP5 = 0;
+"131
+[e = _GP5 -> -> 0 `i `b ]
+[; ;relayonpress.c: 132: GP4 = 0;
+"132
+[e = _GP4 -> -> 0 `i `b ]
+"133
+}
+[e :U 111 ]
+"134
 }
 [e :U 88 ]
 "42
 [e $U 89  ]
 [e :U 90 ]
-[; ;relayonpress.c: 127: }
-[; ;relayonpress.c: 128: }
-[; ;relayonpress.c: 129: }
-"129
+[; ;relayonpress.c: 133: }
+[; ;relayonpress.c: 134: }
+[; ;relayonpress.c: 135: }
+"135
 [e :UE 87 ]
 }

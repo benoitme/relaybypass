@@ -50,17 +50,20 @@ void main(void) {
        // Normal mode
        if(temporary == 0) { 
            if(GP1 == 0) { // footswitch pressed
-               __delay_ms(5); // debouncing
+               __delay_ms(15); // debouncing
                if(GP1 == 0) { 
                   press_switch = press_switch + 1; // switch is on
+                  if(press_switch>10) {
+                      press_switch = 10; // max value for press_switch
+                  } 
                }
            }
            if(press_switch == 1) { // switch is pressed : lets turn the pedal on or off
                changestate = 1;
-               press_switch = press_switch + 1; // avoid bugs if press_switch stays at 1
+               press_switch = 2; // avoid bugs if press_switch stays at 1
            }
            if(GP1 == 1) {
-               __delay_ms(5); // debouncing
+               __delay_ms(15); // debouncing
                if(GP1 == 1) { 
                   press_switch = 0; 
                }
@@ -70,13 +73,16 @@ void main(void) {
        // Temporary mode
        if(temporary == 1) {
            if(GP1 == 0) { // if switch is pressed : temporary activation
-               __delay_ms(5); // debouncing
+               __delay_ms(15); // debouncing
                if(GP1 == 0) { 
                   press_switch = press_switch + 1; // switch is on
+                  if(press_switch>10) {
+                      press_switch = 10; // max value for press_switch
+                  } 
                }
            }
            if(GP1 == 1) { // if switch is not pressed, turn it off
-               __delay_ms(5); // debouncing
+               __delay_ms(15); // debouncing
                if(GP1 == 1) { 
                    state = 0;
                    press_switch = 0;
@@ -84,7 +90,7 @@ void main(void) {
            }
            if(press_switch == 1) {
                changestate = 1; // if switch is pressed, turn the pedal on
-               press_switch = press_switch + 1;
+               press_switch = 2; // avoids bug
            }
        }
        
@@ -96,7 +102,7 @@ void main(void) {
                GP0 = 1; // LED on
                GP5 = 1; // relay on
                GP4 = 0;
-               __delay_ms(30);
+               __delay_ms(20);
                GP2 = 0; // photoFET off
                state = 1;
            }
@@ -106,7 +112,7 @@ void main(void) {
                GP0 = 0; // LED off
                GP5 = 0; // relay off
                GP4 = 0;
-               __delay_ms(30);
+               __delay_ms(20);
                GP2 = 0;
                state = 0;
            }

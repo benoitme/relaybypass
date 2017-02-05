@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC LITE Macro Assembler V1.36 build -262312587 
-                                                                                               Sun Feb 05 13:01:54 2017
+                                                                                               Sun Feb 05 17:03:41 2017
 
 Microchip Technology Omniscient Code Generator v1.36 (Free mode) build 201601150325
      1                           	processor	12F675
@@ -70,7 +70,7 @@ Microchip Technology Omniscient Code Generator v1.36 (Free mode) build 201601150
     64                           
     65  03FD                     __end_of__initialization:	
     66  03FD  0183               	clrf	3
-    67  03FE  2B3B               	ljmp	_main	;jump to C main() function
+    67  03FE  2B27               	ljmp	_main	;jump to C main() function
     68                           
     69                           	psect	cstackBANK0
     70  0020                     __pcstackBANK0:	
@@ -99,7 +99,7 @@ Microchip Technology Omniscient Code Generator v1.36 (Free mode) build 201601150
     93  0025                     	ds	1
     94                           
     95                           	psect	maintext
-    96  033B                     __pmaintext:	
+    96  0327                     __pmaintext:	
     97 ;;
     98 ;;Main: autosize = 0, tempsize = 2, incstack = 0, save=0
     99 ;;
@@ -136,416 +136,446 @@ Microchip Technology Omniscient Code Generator v1.36 (Free mode) build 201601150
    130                           
    131                           
    132                           ;psect for function _main
-   133  033B                     _main:	
+   133  0327                     _main:	
    134                           
    135                           ;relayonpress.c: 16: ANSEL = 0;
    136                           
    137                           ;incstack = 0
    138                           ; Regs used in _main: [wreg+status,2+status,0]
-   139  033B  1683               	bsf	3,5	;RP0=1, select bank1
-   140  033C  019F               	clrf	31	;volatile
+   139  0327  1683               	bsf	3,5	;RP0=1, select bank1
+   140  0328  019F               	clrf	31	;volatile
    141                           
    142                           ;relayonpress.c: 17: CMCON = 0x07;
-   143  033D  3007               	movlw	7
-   144  033E  1283               	bcf	3,5	;RP0=0, select bank0
-   145  033F  0099               	movwf	25	;volatile
+   143  0329  3007               	movlw	7
+   144  032A  1283               	bcf	3,5	;RP0=0, select bank0
+   145  032B  0099               	movwf	25	;volatile
    146                           
    147                           ;relayonpress.c: 18: ADCON0 = 0;
-   148  0340  019F               	clrf	31	;volatile
+   148  032C  019F               	clrf	31	;volatile
    149                           
    150                           ;relayonpress.c: 19: TRISIO0 = 0;
-   151  0341  1683               	bsf	3,5	;RP0=1, select bank1
-   152  0342  1005               	bcf	5,0	;volatile
+   151  032D  1683               	bsf	3,5	;RP0=1, select bank1
+   152  032E  1005               	bcf	5,0	;volatile
    153                           
    154                           ;relayonpress.c: 20: TRISIO1 = 1;
-   155  0343  1485               	bsf	5,1	;volatile
+   155  032F  1485               	bsf	5,1	;volatile
    156                           
    157                           ;relayonpress.c: 21: TRISIO2 = 0;
-   158  0344  1105               	bcf	5,2	;volatile
+   158  0330  1105               	bcf	5,2	;volatile
    159                           
    160                           ;relayonpress.c: 22: TRISIO5 = 0;
-   161  0345  1285               	bcf	5,5	;volatile
+   161  0331  1285               	bcf	5,5	;volatile
    162                           
    163                           ;relayonpress.c: 23: TRISIO4 = 0;
-   164  0346  1205               	bcf	5,4	;volatile
+   164  0332  1205               	bcf	5,4	;volatile
    165                           
    166                           ;relayonpress.c: 24: TRISIO3 = 1;
-   167  0347  1585               	bsf	5,3	;volatile
+   167  0333  1585               	bsf	5,3	;volatile
    168                           
    169                           ;relayonpress.c: 26: GPIO = 0;
-   170  0348  1283               	bcf	3,5	;RP0=0, select bank0
-   171  0349  0185               	clrf	5	;volatile
+   170  0334  1283               	bcf	3,5	;RP0=0, select bank0
+   171  0335  0185               	clrf	5	;volatile
    172                           
    173                           ;relayonpress.c: 29: uint8_t state;
    174                           ;relayonpress.c: 30: state = 0;
-   175  034A  01A4               	clrf	main@state
+   175  0336  01A4               	clrf	main@state
    176                           
    177                           ;relayonpress.c: 32: uint8_t changestate;
    178                           ;relayonpress.c: 33: changestate = 0;
-   179  034B  01A2               	clrf	main@changestate
+   179  0337  01A2               	clrf	main@changestate
    180                           
    181                           ;relayonpress.c: 35: uint8_t temporary;
    182                           ;relayonpress.c: 36: temporary = 0;
-   183  034C  01A3               	clrf	main@temporary
+   183  0338  01A3               	clrf	main@temporary
    184                           
    185                           ;relayonpress.c: 38: uint8_t press_switch;
    186                           ;relayonpress.c: 39: press_switch = 0;
-   187  034D  01A5               	clrf	main@press_switch
-   188  034E                     l661:	
+   187  0339  01A5               	clrf	main@press_switch
+   188  033A                     l675:	
    189                           ;relayonpress.c: 42: while(1) {
    190                           
    191                           
    192                           ;relayonpress.c: 43: if(GP3 == 0) {
-   193  034E  1985               	btfsc	5,3	;volatile
-   194  034F  2B53               	goto	l665
+   193  033A  1985               	btfsc	5,3	;volatile
+   194  033B  2B3F               	goto	l679
    195                           
    196                           ;relayonpress.c: 44: temporary = 1;
-   197  0350  01A3               	clrf	main@temporary
-   198  0351  0AA3               	incf	main@temporary,f
+   197  033C  01A3               	clrf	main@temporary
+   198  033D  0AA3               	incf	main@temporary,f
    199                           
    200                           ;relayonpress.c: 45: }
-   201  0352  2B54               	goto	l667
-   202  0353                     l665:	
+   201  033E  2B40               	goto	l681
+   202  033F                     l679:	
    203                           
    204                           ;relayonpress.c: 46: else {
    205                           ;relayonpress.c: 47: temporary = 0;
-   206  0353  01A3               	clrf	main@temporary
-   207  0354                     l667:	
+   206  033F  01A3               	clrf	main@temporary
+   207  0340                     l681:	
    208                           
    209                           ;relayonpress.c: 48: }
    210                           ;relayonpress.c: 51: if(temporary == 0) {
-   211  0354  0823               	movf	main@temporary,w
-   212  0355  1D03               	btfss	3,2
-   213  0356  2B80               	goto	l689
+   211  0340  0823               	movf	main@temporary,w
+   212  0341  1D03               	btfss	3,2
+   213  0342  2B75               	goto	l709
    214                           
    215                           ;relayonpress.c: 52: if(GP1 == 0) {
-   216  0357  1885               	btfsc	5,1	;volatile
-   217  0358  2B69               	goto	l41
+   216  0343  1885               	btfsc	5,1	;volatile
+   217  0344  2B5E               	goto	l695
    218                           
-   219                           ;relayonpress.c: 53: _delay((unsigned long)((5)*(4000000/4000.0)));
-   220  0359  3007               	movlw	7
-   221  035A  00A1               	movwf	??_main+1
-   222  035B  307D               	movlw	125
-   223  035C  00A0               	movwf	??_main
-   224  035D                     u337:	
-   225  035D  0BA0               	decfsz	??_main,f
-   226  035E  2B5D               	goto	u337
-   227  035F  0BA1               	decfsz	??_main+1,f
-   228  0360  2B5D               	goto	u337
-   229                           
-   230                           ;relayonpress.c: 54: if(GP1 == 0) {
-   231  0361  1283               	bcf	3,5	;RP0=0, select bank0
-   232  0362  1885               	btfsc	5,1	;volatile
-   233  0363  2B69               	goto	l41
-   234                           
-   235                           ;relayonpress.c: 55: press_switch = press_switch + 1;
-   236  0364  0825               	movf	main@press_switch,w
-   237  0365  3E01               	addlw	1
-   238  0366  00A0               	movwf	??_main
-   239  0367  0820               	movf	??_main,w
-   240  0368  00A5               	movwf	main@press_switch
-   241  0369                     l41:	
+   219                           ;relayonpress.c: 53: _delay((unsigned long)((15)*(4000000/4000.0)));
+   220  0345  3014               	movlw	20
+   221  0346  00A1               	movwf	??_main+1
+   222  0347  3079               	movlw	121
+   223  0348  00A0               	movwf	??_main
+   224  0349                     u377:	
+   225  0349  0BA0               	decfsz	??_main,f
+   226  034A  2B49               	goto	u377
+   227  034B  0BA1               	decfsz	??_main+1,f
+   228  034C  2B49               	goto	u377
+   229  034D  2B4E               	nop2
+   230                           
+   231                           ;relayonpress.c: 54: if(GP1 == 0) {
+   232  034E  1283               	bcf	3,5	;RP0=0, select bank0
+   233  034F  1885               	btfsc	5,1	;volatile
+   234  0350  2B5E               	goto	l695
+   235                           
+   236                           ;relayonpress.c: 55: press_switch = press_switch + 1;
+   237  0351  0825               	movf	main@press_switch,w
+   238  0352  3E01               	addlw	1
+   239  0353  00A0               	movwf	??_main
+   240  0354  0820               	movf	??_main,w
+   241  0355  00A5               	movwf	main@press_switch
    242                           
-   243                           ;relayonpress.c: 56: }
-   244                           ;relayonpress.c: 57: }
-   245                           ;relayonpress.c: 58: if(press_switch == 1) {
-   246  0369  0325               	decf	main@press_switch,w
-   247  036A  1D03               	btfss	3,2
-   248  036B  2B73               	goto	l681
-   249                           
-   250                           ;relayonpress.c: 59: changestate = 1;
-   251  036C  01A2               	clrf	main@changestate
-   252  036D  0AA2               	incf	main@changestate,f
-   253                           
-   254                           ;relayonpress.c: 60: press_switch = press_switch + 1;
-   255  036E  0825               	movf	main@press_switch,w
-   256  036F  3E01               	addlw	1
-   257  0370  00A0               	movwf	??_main
-   258  0371  0820               	movf	??_main,w
-   259  0372  00A5               	movwf	main@press_switch
-   260  0373                     l681:	
-   261                           
-   262                           ;relayonpress.c: 61: }
-   263                           ;relayonpress.c: 62: if(GP1 == 1) {
-   264  0373  1C85               	btfss	5,1	;volatile
-   265  0374  2B80               	goto	l689
-   266                           
-   267                           ;relayonpress.c: 63: _delay((unsigned long)((5)*(4000000/4000.0)));
-   268  0375  3007               	movlw	7
-   269  0376  00A1               	movwf	??_main+1
-   270  0377  307D               	movlw	125
-   271  0378  00A0               	movwf	??_main
-   272  0379                     u347:	
-   273  0379  0BA0               	decfsz	??_main,f
-   274  037A  2B79               	goto	u347
-   275  037B  0BA1               	decfsz	??_main+1,f
-   276  037C  2B79               	goto	u347
-   277                           
-   278                           ;relayonpress.c: 64: if(GP1 == 1) {
-   279  037D  1283               	bcf	3,5	;RP0=0, select bank0
-   280  037E  1885               	btfsc	5,1	;volatile
-   281                           
-   282                           ;relayonpress.c: 65: press_switch = 0;
-   283  037F  01A5               	clrf	main@press_switch
-   284  0380                     l689:	
-   285                           
-   286                           ;relayonpress.c: 66: }
-   287                           ;relayonpress.c: 67: }
-   288                           ;relayonpress.c: 68: }
-   289                           ;relayonpress.c: 71: if(temporary == 1) {
-   290  0380  0323               	decf	main@temporary,w
-   291  0381  1D03               	btfss	3,2
-   292  0382  2BAE               	goto	l46
-   293                           
-   294                           ;relayonpress.c: 72: if(GP1 == 0) {
-   295  0383  1885               	btfsc	5,1	;volatile
-   296  0384  2B95               	goto	l699
-   297                           
-   298                           ;relayonpress.c: 73: _delay((unsigned long)((5)*(4000000/4000.0)));
-   299  0385  3007               	movlw	7
-   300  0386  00A1               	movwf	??_main+1
-   301  0387  307D               	movlw	125
-   302  0388  00A0               	movwf	??_main
-   303  0389                     u357:	
-   304  0389  0BA0               	decfsz	??_main,f
-   305  038A  2B89               	goto	u357
-   306  038B  0BA1               	decfsz	??_main+1,f
-   307  038C  2B89               	goto	u357
-   308                           
-   309                           ;relayonpress.c: 74: if(GP1 == 0) {
-   310  038D  1283               	bcf	3,5	;RP0=0, select bank0
-   311  038E  1885               	btfsc	5,1	;volatile
-   312  038F  2B95               	goto	l699
-   313                           
-   314                           ;relayonpress.c: 75: press_switch = press_switch + 1;
-   315  0390  0825               	movf	main@press_switch,w
-   316  0391  3E01               	addlw	1
-   317  0392  00A0               	movwf	??_main
-   318  0393  0820               	movf	??_main,w
-   319  0394  00A5               	movwf	main@press_switch
-   320  0395                     l699:	
-   321                           
-   322                           ;relayonpress.c: 76: }
-   323                           ;relayonpress.c: 77: }
-   324                           ;relayonpress.c: 78: if(GP1 == 1) {
-   325  0395  1C85               	btfss	5,1	;volatile
-   326  0396  2BA4               	goto	l707
-   327                           
-   328                           ;relayonpress.c: 79: _delay((unsigned long)((5)*(4000000/4000.0)));
-   329  0397  3007               	movlw	7
-   330  0398  00A1               	movwf	??_main+1
-   331  0399  307D               	movlw	125
-   332  039A  00A0               	movwf	??_main
-   333  039B                     u367:	
-   334  039B  0BA0               	decfsz	??_main,f
-   335  039C  2B9B               	goto	u367
-   336  039D  0BA1               	decfsz	??_main+1,f
-   337  039E  2B9B               	goto	u367
-   338                           
-   339                           ;relayonpress.c: 80: if(GP1 == 1) {
-   340  039F  1283               	bcf	3,5	;RP0=0, select bank0
-   341  03A0  1C85               	btfss	5,1	;volatile
-   342  03A1  2BA4               	goto	l707
-   343                           
-   344                           ;relayonpress.c: 81: state = 0;
-   345  03A2  01A4               	clrf	main@state
-   346                           
-   347                           ;relayonpress.c: 82: press_switch = 0;
-   348  03A3  01A5               	clrf	main@press_switch
-   349  03A4                     l707:	
-   350                           
+   243                           ;relayonpress.c: 56: if(press_switch>10) {
+   244  0356  300B               	movlw	11
+   245  0357  0225               	subwf	main@press_switch,w
+   246  0358  1C03               	skipc
+   247  0359  2B5E               	goto	l695
+   248                           
+   249                           ;relayonpress.c: 57: press_switch = 10;
+   250  035A  300A               	movlw	10
+   251  035B  00A0               	movwf	??_main
+   252  035C  0820               	movf	??_main,w
+   253  035D  00A5               	movwf	main@press_switch
+   254  035E                     l695:	
+   255                           
+   256                           ;relayonpress.c: 58: }
+   257                           ;relayonpress.c: 59: }
+   258                           ;relayonpress.c: 60: }
+   259                           ;relayonpress.c: 61: if(press_switch == 1) {
+   260  035E  0325               	decf	main@press_switch,w
+   261  035F  1D03               	btfss	3,2
+   262  0360  2B67               	goto	l701
+   263                           
+   264                           ;relayonpress.c: 62: changestate = 1;
+   265  0361  01A2               	clrf	main@changestate
+   266  0362  0AA2               	incf	main@changestate,f
+   267                           
+   268                           ;relayonpress.c: 63: press_switch = 2;
+   269  0363  3002               	movlw	2
+   270  0364  00A0               	movwf	??_main
+   271  0365  0820               	movf	??_main,w
+   272  0366  00A5               	movwf	main@press_switch
+   273  0367                     l701:	
+   274                           
+   275                           ;relayonpress.c: 64: }
+   276                           ;relayonpress.c: 65: if(GP1 == 1) {
+   277  0367  1C85               	btfss	5,1	;volatile
+   278  0368  2B75               	goto	l709
+   279                           
+   280                           ;relayonpress.c: 66: _delay((unsigned long)((15)*(4000000/4000.0)));
+   281  0369  3014               	movlw	20
+   282  036A  00A1               	movwf	??_main+1
+   283  036B  3079               	movlw	121
+   284  036C  00A0               	movwf	??_main
+   285  036D                     u387:	
+   286  036D  0BA0               	decfsz	??_main,f
+   287  036E  2B6D               	goto	u387
+   288  036F  0BA1               	decfsz	??_main+1,f
+   289  0370  2B6D               	goto	u387
+   290  0371  2B72               	nop2
+   291                           
+   292                           ;relayonpress.c: 67: if(GP1 == 1) {
+   293  0372  1283               	bcf	3,5	;RP0=0, select bank0
+   294  0373  1885               	btfsc	5,1	;volatile
+   295                           
+   296                           ;relayonpress.c: 68: press_switch = 0;
+   297  0374  01A5               	clrf	main@press_switch
+   298  0375                     l709:	
+   299                           
+   300                           ;relayonpress.c: 69: }
+   301                           ;relayonpress.c: 70: }
+   302                           ;relayonpress.c: 71: }
+   303                           ;relayonpress.c: 74: if(temporary == 1) {
+   304  0375  0323               	decf	main@temporary,w
+   305  0376  1D03               	btfss	3,2
+   306  0377  2BAC               	goto	l737
+   307                           
+   308                           ;relayonpress.c: 75: if(GP1 == 0) {
+   309  0378  1885               	btfsc	5,1	;volatile
+   310  0379  2B93               	goto	l723
+   311                           
+   312                           ;relayonpress.c: 76: _delay((unsigned long)((15)*(4000000/4000.0)));
+   313  037A  3014               	movlw	20
+   314  037B  00A1               	movwf	??_main+1
+   315  037C  3079               	movlw	121
+   316  037D  00A0               	movwf	??_main
+   317  037E                     u397:	
+   318  037E  0BA0               	decfsz	??_main,f
+   319  037F  2B7E               	goto	u397
+   320  0380  0BA1               	decfsz	??_main+1,f
+   321  0381  2B7E               	goto	u397
+   322  0382  2B83               	nop2
+   323                           
+   324                           ;relayonpress.c: 77: if(GP1 == 0) {
+   325  0383  1283               	bcf	3,5	;RP0=0, select bank0
+   326  0384  1885               	btfsc	5,1	;volatile
+   327  0385  2B93               	goto	l723
+   328                           
+   329                           ;relayonpress.c: 78: press_switch = press_switch + 1;
+   330  0386  0825               	movf	main@press_switch,w
+   331  0387  3E01               	addlw	1
+   332  0388  00A0               	movwf	??_main
+   333  0389  0820               	movf	??_main,w
+   334  038A  00A5               	movwf	main@press_switch
+   335                           
+   336                           ;relayonpress.c: 79: if(press_switch>10) {
+   337  038B  300B               	movlw	11
+   338  038C  0225               	subwf	main@press_switch,w
+   339  038D  1C03               	skipc
+   340  038E  2B93               	goto	l723
+   341                           
+   342                           ;relayonpress.c: 80: press_switch = 10;
+   343  038F  300A               	movlw	10
+   344  0390  00A0               	movwf	??_main
+   345  0391  0820               	movf	??_main,w
+   346  0392  00A5               	movwf	main@press_switch
+   347  0393                     l723:	
+   348                           
+   349                           ;relayonpress.c: 81: }
+   350                           ;relayonpress.c: 82: }
    351                           ;relayonpress.c: 83: }
-   352                           ;relayonpress.c: 84: }
-   353                           ;relayonpress.c: 85: if(press_switch == 1) {
-   354  03A4  0325               	decf	main@press_switch,w
-   355  03A5  1D03               	btfss	3,2
-   356  03A6  2BAE               	goto	l46
-   357                           
-   358                           ;relayonpress.c: 86: changestate = 1;
-   359  03A7  01A2               	clrf	main@changestate
-   360  03A8  0AA2               	incf	main@changestate,f
-   361                           
-   362                           ;relayonpress.c: 87: press_switch = press_switch + 1;
-   363  03A9  0825               	movf	main@press_switch,w
-   364  03AA  3E01               	addlw	1
-   365  03AB  00A0               	movwf	??_main
-   366  03AC  0820               	movf	??_main,w
-   367  03AD  00A5               	movwf	main@press_switch
-   368  03AE                     l46:	
-   369                           
-   370                           ;relayonpress.c: 88: }
-   371                           ;relayonpress.c: 89: }
-   372                           ;relayonpress.c: 92: if(changestate == 1) {
-   373  03AE  0322               	decf	main@changestate,w
-   374  03AF  1D03               	btfss	3,2
-   375  03B0  2BF3               	goto	l743
-   376                           
-   377                           ;relayonpress.c: 93: if(state == 0) {
-   378  03B1  0824               	movf	main@state,w
-   379  03B2  1D03               	btfss	3,2
-   380  03B3  2BCF               	goto	l53
-   381                           
-   382                           ;relayonpress.c: 94: GP2 = 1;
-   383  03B4  1505               	bsf	5,2	;volatile
-   384                           
-   385                           ;relayonpress.c: 95: _delay((unsigned long)((50)*(4000000/4000.0)));
-   386  03B5  3041               	movlw	65
-   387  03B6  00A1               	movwf	??_main+1
-   388  03B7  30EE               	movlw	238
-   389  03B8  00A0               	movwf	??_main
-   390  03B9                     u377:	
-   391  03B9  0BA0               	decfsz	??_main,f
-   392  03BA  2BB9               	goto	u377
-   393  03BB  0BA1               	decfsz	??_main+1,f
-   394  03BC  2BB9               	goto	u377
-   395  03BD  0000               	nop
-   396                           
-   397                           ;relayonpress.c: 96: GP0 = 1;
-   398  03BE  1283               	bcf	3,5	;RP0=0, select bank0
-   399  03BF  1405               	bsf	5,0	;volatile
-   400                           
-   401                           ;relayonpress.c: 97: GP5 = 1;
-   402  03C0  1685               	bsf	5,5	;volatile
-   403                           
-   404                           ;relayonpress.c: 98: GP4 = 0;
-   405  03C1  1205               	bcf	5,4	;volatile
-   406                           
-   407                           ;relayonpress.c: 99: _delay((unsigned long)((30)*(4000000/4000.0)));
-   408  03C2  3027               	movlw	39
-   409  03C3  00A1               	movwf	??_main+1
-   410  03C4  30F5               	movlw	245
-   411  03C5  00A0               	movwf	??_main
-   412  03C6                     u387:	
-   413  03C6  0BA0               	decfsz	??_main,f
-   414  03C7  2BC6               	goto	u387
-   415  03C8  0BA1               	decfsz	??_main+1,f
-   416  03C9  2BC6               	goto	u387
-   417                           
-   418                           ;relayonpress.c: 100: GP2 = 0;
-   419  03CA  1283               	bcf	3,5	;RP0=0, select bank0
-   420  03CB  1105               	bcf	5,2	;volatile
-   421                           
-   422                           ;relayonpress.c: 101: state = 1;
-   423  03CC  01A4               	clrf	main@state
-   424  03CD  0AA4               	incf	main@state,f
-   425                           
-   426                           ;relayonpress.c: 102: }
-   427  03CE  2BE8               	goto	l741
-   428  03CF                     l53:	
-   429                           
-   430                           ;relayonpress.c: 103: else {
-   431                           ;relayonpress.c: 104: GP2 = 1;
-   432  03CF  1505               	bsf	5,2	;volatile
-   433                           
-   434                           ;relayonpress.c: 105: _delay((unsigned long)((50)*(4000000/4000.0)));
-   435  03D0  3041               	movlw	65
-   436  03D1  00A1               	movwf	??_main+1
-   437  03D2  30EE               	movlw	238
-   438  03D3  00A0               	movwf	??_main
-   439  03D4                     u397:	
-   440  03D4  0BA0               	decfsz	??_main,f
-   441  03D5  2BD4               	goto	u397
-   442  03D6  0BA1               	decfsz	??_main+1,f
-   443  03D7  2BD4               	goto	u397
-   444  03D8  0000               	nop
-   445                           
-   446                           ;relayonpress.c: 106: GP0 = 0;
-   447  03D9  1283               	bcf	3,5	;RP0=0, select bank0
-   448  03DA  1005               	bcf	5,0	;volatile
-   449                           
-   450                           ;relayonpress.c: 107: GP5 = 0;
-   451  03DB  1285               	bcf	5,5	;volatile
-   452                           
-   453                           ;relayonpress.c: 108: GP4 = 0;
-   454  03DC  1205               	bcf	5,4	;volatile
-   455                           
-   456                           ;relayonpress.c: 109: _delay((unsigned long)((30)*(4000000/4000.0)));
-   457  03DD  3027               	movlw	39
-   458  03DE  00A1               	movwf	??_main+1
-   459  03DF  30F5               	movlw	245
-   460  03E0  00A0               	movwf	??_main
-   461  03E1                     u407:	
-   462  03E1  0BA0               	decfsz	??_main,f
-   463  03E2  2BE1               	goto	u407
-   464  03E3  0BA1               	decfsz	??_main+1,f
-   465  03E4  2BE1               	goto	u407
-   466                           
-   467                           ;relayonpress.c: 110: GP2 = 0;
-   468  03E5  1283               	bcf	3,5	;RP0=0, select bank0
-   469  03E6  1105               	bcf	5,2	;volatile
-   470                           
-   471                           ;relayonpress.c: 111: state = 0;
-   472  03E7  01A4               	clrf	main@state
-   473  03E8                     l741:	
+   352                           ;relayonpress.c: 84: if(GP1 == 1) {
+   353  0393  1C85               	btfss	5,1	;volatile
+   354  0394  2BA3               	goto	l731
+   355                           
+   356                           ;relayonpress.c: 85: _delay((unsigned long)((15)*(4000000/4000.0)));
+   357  0395  3014               	movlw	20
+   358  0396  00A1               	movwf	??_main+1
+   359  0397  3079               	movlw	121
+   360  0398  00A0               	movwf	??_main
+   361  0399                     u407:	
+   362  0399  0BA0               	decfsz	??_main,f
+   363  039A  2B99               	goto	u407
+   364  039B  0BA1               	decfsz	??_main+1,f
+   365  039C  2B99               	goto	u407
+   366  039D  2B9E               	nop2
+   367                           
+   368                           ;relayonpress.c: 86: if(GP1 == 1) {
+   369  039E  1283               	bcf	3,5	;RP0=0, select bank0
+   370  039F  1C85               	btfss	5,1	;volatile
+   371  03A0  2BA3               	goto	l731
+   372                           
+   373                           ;relayonpress.c: 87: state = 0;
+   374  03A1  01A4               	clrf	main@state
+   375                           
+   376                           ;relayonpress.c: 88: press_switch = 0;
+   377  03A2  01A5               	clrf	main@press_switch
+   378  03A3                     l731:	
+   379                           
+   380                           ;relayonpress.c: 89: }
+   381                           ;relayonpress.c: 90: }
+   382                           ;relayonpress.c: 91: if(press_switch == 1) {
+   383  03A3  0325               	decf	main@press_switch,w
+   384  03A4  1D03               	btfss	3,2
+   385  03A5  2BAC               	goto	l737
+   386                           
+   387                           ;relayonpress.c: 92: changestate = 1;
+   388  03A6  01A2               	clrf	main@changestate
+   389  03A7  0AA2               	incf	main@changestate,f
+   390                           
+   391                           ;relayonpress.c: 93: press_switch = 2;
+   392  03A8  3002               	movlw	2
+   393  03A9  00A0               	movwf	??_main
+   394  03AA  0820               	movf	??_main,w
+   395  03AB  00A5               	movwf	main@press_switch
+   396  03AC                     l737:	
+   397                           
+   398                           ;relayonpress.c: 94: }
+   399                           ;relayonpress.c: 95: }
+   400                           ;relayonpress.c: 98: if(changestate == 1) {
+   401  03AC  0322               	decf	main@changestate,w
+   402  03AD  1D03               	btfss	3,2
+   403  03AE  2BF3               	goto	l769
+   404                           
+   405                           ;relayonpress.c: 99: if(state == 0) {
+   406  03AF  0824               	movf	main@state,w
+   407  03B0  1D03               	btfss	3,2
+   408  03B1  2BCE               	goto	l55
+   409                           
+   410                           ;relayonpress.c: 100: GP2 = 1;
+   411  03B2  1505               	bsf	5,2	;volatile
+   412                           
+   413                           ;relayonpress.c: 101: _delay((unsigned long)((20)*(4000000/4000.0)));
+   414  03B3  301A               	movlw	26
+   415  03B4  00A1               	movwf	??_main+1
+   416  03B5  30F8               	movlw	248
+   417  03B6  00A0               	movwf	??_main
+   418  03B7                     u417:	
+   419  03B7  0BA0               	decfsz	??_main,f
+   420  03B8  2BB7               	goto	u417
+   421  03B9  0BA1               	decfsz	??_main+1,f
+   422  03BA  2BB7               	goto	u417
+   423  03BB  0000               	nop
+   424                           
+   425                           ;relayonpress.c: 102: GP0 = 1;
+   426  03BC  1283               	bcf	3,5	;RP0=0, select bank0
+   427  03BD  1405               	bsf	5,0	;volatile
+   428                           
+   429                           ;relayonpress.c: 103: GP5 = 1;
+   430  03BE  1685               	bsf	5,5	;volatile
+   431                           
+   432                           ;relayonpress.c: 104: GP4 = 0;
+   433  03BF  1205               	bcf	5,4	;volatile
+   434                           
+   435                           ;relayonpress.c: 105: _delay((unsigned long)((20)*(4000000/4000.0)));
+   436  03C0  301A               	movlw	26
+   437  03C1  00A1               	movwf	??_main+1
+   438  03C2  30F8               	movlw	248
+   439  03C3  00A0               	movwf	??_main
+   440  03C4                     u427:	
+   441  03C4  0BA0               	decfsz	??_main,f
+   442  03C5  2BC4               	goto	u427
+   443  03C6  0BA1               	decfsz	??_main+1,f
+   444  03C7  2BC4               	goto	u427
+   445  03C8  0000               	nop
+   446                           
+   447                           ;relayonpress.c: 106: GP2 = 0;
+   448  03C9  1283               	bcf	3,5	;RP0=0, select bank0
+   449  03CA  1105               	bcf	5,2	;volatile
+   450                           
+   451                           ;relayonpress.c: 107: state = 1;
+   452  03CB  01A4               	clrf	main@state
+   453  03CC  0AA4               	incf	main@state,f
+   454                           
+   455                           ;relayonpress.c: 108: }
+   456  03CD  2BE8               	goto	l767
+   457  03CE                     l55:	
+   458                           
+   459                           ;relayonpress.c: 109: else {
+   460                           ;relayonpress.c: 110: GP2 = 1;
+   461  03CE  1505               	bsf	5,2	;volatile
+   462                           
+   463                           ;relayonpress.c: 111: _delay((unsigned long)((20)*(4000000/4000.0)));
+   464  03CF  301A               	movlw	26
+   465  03D0  00A1               	movwf	??_main+1
+   466  03D1  30F8               	movlw	248
+   467  03D2  00A0               	movwf	??_main
+   468  03D3                     u437:	
+   469  03D3  0BA0               	decfsz	??_main,f
+   470  03D4  2BD3               	goto	u437
+   471  03D5  0BA1               	decfsz	??_main+1,f
+   472  03D6  2BD3               	goto	u437
+   473  03D7  0000               	nop
    474                           
-   475                           ;relayonpress.c: 112: }
-   476                           ;relayonpress.c: 113: _delay((unsigned long)((10)*(4000000/4000.0)));
-   477  03E8  300D               	movlw	13
-   478  03E9  00A1               	movwf	??_main+1
-   479  03EA  30FB               	movlw	251
-   480  03EB  00A0               	movwf	??_main
-   481  03EC                     u417:	
-   482  03EC  0BA0               	decfsz	??_main,f
-   483  03ED  2BEC               	goto	u417
-   484  03EE  0BA1               	decfsz	??_main+1,f
-   485  03EF  2BEC               	goto	u417
-   486  03F0  2BF1               	nop2
-   487                           
-   488                           ;relayonpress.c: 114: changestate=0;
-   489  03F1  1283               	bcf	3,5	;RP0=0, select bank0
-   490  03F2  01A2               	clrf	main@changestate
-   491  03F3                     l743:	
-   492                           
-   493                           ;relayonpress.c: 115: }
-   494                           ;relayonpress.c: 118: if (state == 1) {
-   495  03F3  0324               	decf	main@state,w
-   496  03F4  1D03               	btfss	3,2
-   497  03F5  2BF9               	goto	l55
-   498                           
-   499                           ;relayonpress.c: 119: GP0 = 1;
-   500  03F6  1405               	bsf	5,0	;volatile
-   501                           
-   502                           ;relayonpress.c: 120: GP5 = 1;
-   503  03F7  1685               	bsf	5,5	;volatile
-   504  03F8  2BFB               	goto	L1
-   505  03F9                     l55:	
-   506                           ;relayonpress.c: 122: }
-   507                           
-   508                           ;relayonpress.c: 121: GP4 = 0;
-   509                           
-   510                           
-   511                           ;relayonpress.c: 123: else {
-   512                           ;relayonpress.c: 124: GP0 = 0;
-   513  03F9  1005               	bcf	5,0	;volatile
-   514                           
-   515                           ;relayonpress.c: 125: GP5 = 0;
-   516  03FA  1285               	bcf	5,5	;volatile
-   517  03FB                     L1:	
-   518                           
-   519                           ;relayonpress.c: 126: GP4 = 0;
-   520  03FB  1205               	bcf	5,4	;volatile
-   521  03FC  2B4E               	goto	l661
-   522  03FD                     __end_of_main:	
-   523  005E                     btemp	set	94	;btemp
-   524  005E                     wtemp	set	94
-   525  005E                     wtemp0	set	94
-   526  0060                     wtemp1	set	96
-   527  0062                     wtemp2	set	98
-   528  0064                     wtemp3	set	100
-   529  0066                     wtemp4	set	102
-   530  0068                     wtemp5	set	104
-   531  005F                     wtemp6	set	95
-   532  005E                     ttemp	set	94
-   533  005E                     ttemp0	set	94
-   534  0061                     ttemp1	set	97
-   535  0064                     ttemp2	set	100
-   536  0067                     ttemp3	set	103
-   537  005F                     ttemp4	set	95
-   538  005E                     ltemp	set	94
-   539  005E                     ltemp0	set	94
-   540  0062                     ltemp1	set	98
-   541  0066                     ltemp2	set	102
-   542  0060                     ltemp3	set	96
+   475                           ;relayonpress.c: 112: GP0 = 0;
+   476  03D8  1283               	bcf	3,5	;RP0=0, select bank0
+   477  03D9  1005               	bcf	5,0	;volatile
+   478                           
+   479                           ;relayonpress.c: 113: GP5 = 0;
+   480  03DA  1285               	bcf	5,5	;volatile
+   481                           
+   482                           ;relayonpress.c: 114: GP4 = 0;
+   483  03DB  1205               	bcf	5,4	;volatile
+   484                           
+   485                           ;relayonpress.c: 115: _delay((unsigned long)((20)*(4000000/4000.0)));
+   486  03DC  301A               	movlw	26
+   487  03DD  00A1               	movwf	??_main+1
+   488  03DE  30F8               	movlw	248
+   489  03DF  00A0               	movwf	??_main
+   490  03E0                     u447:	
+   491  03E0  0BA0               	decfsz	??_main,f
+   492  03E1  2BE0               	goto	u447
+   493  03E2  0BA1               	decfsz	??_main+1,f
+   494  03E3  2BE0               	goto	u447
+   495  03E4  0000               	nop
+   496                           
+   497                           ;relayonpress.c: 116: GP2 = 0;
+   498  03E5  1283               	bcf	3,5	;RP0=0, select bank0
+   499  03E6  1105               	bcf	5,2	;volatile
+   500                           
+   501                           ;relayonpress.c: 117: state = 0;
+   502  03E7  01A4               	clrf	main@state
+   503  03E8                     l767:	
+   504                           
+   505                           ;relayonpress.c: 118: }
+   506                           ;relayonpress.c: 119: _delay((unsigned long)((10)*(4000000/4000.0)));
+   507  03E8  300D               	movlw	13
+   508  03E9  00A1               	movwf	??_main+1
+   509  03EA  30FB               	movlw	251
+   510  03EB  00A0               	movwf	??_main
+   511  03EC                     u457:	
+   512  03EC  0BA0               	decfsz	??_main,f
+   513  03ED  2BEC               	goto	u457
+   514  03EE  0BA1               	decfsz	??_main+1,f
+   515  03EF  2BEC               	goto	u457
+   516  03F0  2BF1               	nop2
+   517                           
+   518                           ;relayonpress.c: 120: changestate=0;
+   519  03F1  1283               	bcf	3,5	;RP0=0, select bank0
+   520  03F2  01A2               	clrf	main@changestate
+   521  03F3                     l769:	
+   522                           
+   523                           ;relayonpress.c: 121: }
+   524                           ;relayonpress.c: 124: if (state == 1) {
+   525  03F3  0324               	decf	main@state,w
+   526  03F4  1D03               	btfss	3,2
+   527  03F5  2BF9               	goto	l57
+   528                           
+   529                           ;relayonpress.c: 125: GP0 = 1;
+   530  03F6  1405               	bsf	5,0	;volatile
+   531                           
+   532                           ;relayonpress.c: 126: GP5 = 1;
+   533  03F7  1685               	bsf	5,5	;volatile
+   534  03F8  2BFB               	goto	L1
+   535  03F9                     l57:	
+   536                           ;relayonpress.c: 128: }
+   537                           
+   538                           ;relayonpress.c: 127: GP4 = 0;
+   539                           
+   540                           
+   541                           ;relayonpress.c: 129: else {
+   542                           ;relayonpress.c: 130: GP0 = 0;
+   543  03F9  1005               	bcf	5,0	;volatile
+   544                           
+   545                           ;relayonpress.c: 131: GP5 = 0;
+   546  03FA  1285               	bcf	5,5	;volatile
+   547  03FB                     L1:	
+   548                           
+   549                           ;relayonpress.c: 132: GP4 = 0;
+   550  03FB  1205               	bcf	5,4	;volatile
+   551  03FC  2B3A               	goto	l675
+   552  03FD                     __end_of_main:	
+   553  005E                     btemp	set	94	;btemp
+   554  005E                     wtemp	set	94
+   555  005E                     wtemp0	set	94
+   556  0060                     wtemp1	set	96
+   557  0062                     wtemp2	set	98
+   558  0064                     wtemp3	set	100
+   559  0066                     wtemp4	set	102
+   560  0068                     wtemp5	set	104
+   561  005F                     wtemp6	set	95
+   562  005E                     ttemp	set	94
+   563  005E                     ttemp0	set	94
+   564  0061                     ttemp1	set	97
+   565  0064                     ttemp2	set	100
+   566  0067                     ttemp3	set	103
+   567  005F                     ttemp4	set	95
+   568  005E                     ltemp	set	94
+   569  005E                     ltemp0	set	94
+   570  0062                     ltemp1	set	98
+   571  0066                     ltemp2	set	102
+   572  0060                     ltemp3	set	96
 
 
 Data Sizes:
@@ -578,7 +608,7 @@ Call Graph Tables:
  ---------------------------------------------------------------------------------
  (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
  ---------------------------------------------------------------------------------
- (0) _main                                                 6     6      0     260
+ (0) _main                                                 6     6      0     262
                                               0 BANK0      6     6      0
  ---------------------------------------------------------------------------------
  Estimated maximum stack depth 0
@@ -607,19 +637,19 @@ DATA                 0      0       0       6        0.0%
 
 
 Microchip Technology PIC Macro Assembler V1.36 build -262312587 
-Symbol Table                                                                                   Sun Feb 05 13:01:54 2017
+Symbol Table                                                                                   Sun Feb 05 17:03:41 2017
 
-            __CFG_CP$OFF 0000                       l41 0369                       l53 03CF  
-                     l46 03AE                       l55 03F9                      l707 03A4  
-                    l741 03E8                      l661 034E                      l743 03F3  
-                    l681 0373                      l665 0353                      l667 0354  
-                    l689 0380                      l699 0395                      _GP0 0028  
+            __CFG_CP$OFF 0000                       l55 03CE                       l57 03F9  
+                    l701 0367                      l731 03A3                      l723 0393  
+                    l709 0375                      l737 03AC                      l681 0340  
+                    l675 033A                      l767 03E8                      l695 035E  
+                    l679 033F                      l769 03F3                      _GP0 0028  
                     _GP1 0029                      _GP2 002A                      _GP3 002B  
-                    _GP4 002C                      _GP5 002D                      u407 03E1  
-                    u417 03EC                      u337 035D             __CFG_CPD$OFF 0000  
-                    u347 0379                      u357 0389                      u367 039B  
-                    u377 03B9                      u387 03C6                      u397 03D4  
-                   _GPIO 0005                     _main 033B                     btemp 005E  
+                    _GP4 002C                      _GP5 002D                      u407 0399  
+                    u417 03B7             __CFG_CPD$OFF 0000                      u427 03C4  
+                    u437 03D3                      u447 03E0                      u457 03EC  
+                    u377 0349                      u387 036D                      u397 037E  
+                   _GPIO 0005                     _main 0327                     btemp 005E  
                    ltemp 005E                     start 0000                     ttemp 005E  
                    wtemp 005E                    ?_main 0020            __CFG_WDTE$OFF 0000  
                   _CMCON 0019                    _ANSEL 009F           __CFG_BOREN$OFF 0000  
@@ -631,9 +661,9 @@ Symbol Table                                                                    
                   wtemp5 0068                    wtemp6 005F           __CFG_MCLRE$OFF 0000  
         __initialization 03FD             __end_of_main 03FD                   ??_main 0020  
                  _ADCON0 001F           __CFG_PWRTE$OFF 0000            main@temporary 0023  
-__end_of__initialization 03FD               __pmaintext 033B                  _TRISIO0 0428  
+__end_of__initialization 03FD               __pmaintext 0327                  _TRISIO0 0428  
                 _TRISIO1 0429                  _TRISIO2 042A                  _TRISIO3 042B  
                 _TRISIO4 042C                  _TRISIO5 042D     end_of_initialization 03FD  
     start_initialization 03FD          main@changestate 0022                ___latbits 0000  
           __pcstackBANK0 0020                main@state 0024         main@press_switch 0025  
-          __size_of_main 00C2        __CFG_FOSC$INTRCIO 0000  
+          __size_of_main 00D6        __CFG_FOSC$INTRCIO 0000  

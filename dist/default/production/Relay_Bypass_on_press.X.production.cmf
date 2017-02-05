@@ -11,13 +11,13 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$dist/default/production\Relay_Bypass_on_press.X.production.obj
-cinit CODE 0 3FD 3FD 2 2
-maintext CODE 0 33B 33B C2 2
-cstackBANK0 BANK0 1 20 20 6 1
-$C:\Users\Benoit\AppData\Local\Temp\s2ng.obj
+$C:\Users\Benoit\AppData\Local\Temp\s548.obj
 end_init CODE 0 0 0 1 2
 config CONFIG 0 2007 2007 1 2
+$dist/default/production\Relay_Bypass_on_press.X.production.obj
+cinit CODE 0 3FD 3FD 2 2
+maintext CODE 0 327 327 D6 2
+cstackBANK0 BANK0 1 20 20 6 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
 # is described on a single line as follows:
@@ -26,16 +26,16 @@ config CONFIG 0 2007 2007 1 2
 %UNUSED
 RAM 26-5D 1
 BANK0 26-5D 1
-CONST 1-33A 2
-ENTRY 1-33A 2
+CONST 1-326 2
+ENTRY 1-326 2
 IDLOC 2000-2003 2
 STACK 26-5D 1
-CODE 1-33A 2
+CODE 1-326 2
 SFR0 0-1F 1
 SFR1 80-DD 1
 EEDATA 2100-217F 2
-STRCODE 1-33A 2
-STRING 1-33A 2
+STRCODE 1-326 2
+STRING 1-326 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -50,86 +50,88 @@ STRING 1-33A 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Relay_Bypass_on_press.X.production.obj
-3FD cinit CODE >158:C:\Users\Benoit\AppData\Local\Temp\s2ng.
-3FD cinit CODE >161:C:\Users\Benoit\AppData\Local\Temp\s2ng.
-3FD cinit CODE >167:C:\Users\Benoit\AppData\Local\Temp\s2ng.
-3FD cinit CODE >169:C:\Users\Benoit\AppData\Local\Temp\s2ng.
-3FE cinit CODE >170:C:\Users\Benoit\AppData\Local\Temp\s2ng.
-33B maintext CODE >15:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-33B maintext CODE >16:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-33D maintext CODE >17:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-340 maintext CODE >18:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-341 maintext CODE >19:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-343 maintext CODE >20:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-344 maintext CODE >21:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-345 maintext CODE >22:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-346 maintext CODE >23:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-347 maintext CODE >24:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-348 maintext CODE >26:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-34A maintext CODE >30:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-34B maintext CODE >33:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-34C maintext CODE >36:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-34D maintext CODE >39:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-34E maintext CODE >43:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-350 maintext CODE >44:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-352 maintext CODE >45:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-353 maintext CODE >47:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-354 maintext CODE >51:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-357 maintext CODE >52:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-359 maintext CODE >53:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-361 maintext CODE >54:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-364 maintext CODE >55:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-369 maintext CODE >57:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-369 maintext CODE >58:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-36C maintext CODE >59:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-36E maintext CODE >60:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-373 maintext CODE >62:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-375 maintext CODE >63:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-37D maintext CODE >64:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-37F maintext CODE >65:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-380 maintext CODE >71:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-383 maintext CODE >72:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-385 maintext CODE >73:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-38D maintext CODE >74:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-390 maintext CODE >75:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-395 maintext CODE >78:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-397 maintext CODE >79:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-39F maintext CODE >80:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-3A2 maintext CODE >81:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-3A3 maintext CODE >82:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-3A4 maintext CODE >85:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-3A7 maintext CODE >86:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-3A9 maintext CODE >87:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-3AE maintext CODE >89:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-3AE maintext CODE >92:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-3B1 maintext CODE >93:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-3B4 maintext CODE >94:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-3B5 maintext CODE >95:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-3BE maintext CODE >96:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-3C0 maintext CODE >97:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-3C1 maintext CODE >98:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-3C2 maintext CODE >99:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-3CA maintext CODE >100:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-3CC maintext CODE >101:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-3CE maintext CODE >102:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-3CF maintext CODE >103:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-3CF maintext CODE >104:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-3D0 maintext CODE >105:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-3D9 maintext CODE >106:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-3DB maintext CODE >107:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-3DC maintext CODE >108:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-3DD maintext CODE >109:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-3E5 maintext CODE >110:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-3E7 maintext CODE >111:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-3E8 maintext CODE >113:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-3F1 maintext CODE >114:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-3F3 maintext CODE >118:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-3F6 maintext CODE >119:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-3F7 maintext CODE >120:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-3F9 maintext CODE >123:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-3F9 maintext CODE >124:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-3FA maintext CODE >125:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-3FB maintext CODE >126:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+3FD cinit CODE >158:C:\Users\Benoit\AppData\Local\Temp\s548.
+3FD cinit CODE >161:C:\Users\Benoit\AppData\Local\Temp\s548.
+3FD cinit CODE >167:C:\Users\Benoit\AppData\Local\Temp\s548.
+3FD cinit CODE >169:C:\Users\Benoit\AppData\Local\Temp\s548.
+3FE cinit CODE >170:C:\Users\Benoit\AppData\Local\Temp\s548.
+327 maintext CODE >15:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+327 maintext CODE >16:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+329 maintext CODE >17:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+32C maintext CODE >18:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+32D maintext CODE >19:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+32F maintext CODE >20:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+330 maintext CODE >21:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+331 maintext CODE >22:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+332 maintext CODE >23:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+333 maintext CODE >24:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+334 maintext CODE >26:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+336 maintext CODE >30:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+337 maintext CODE >33:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+338 maintext CODE >36:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+339 maintext CODE >39:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+33A maintext CODE >43:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+33C maintext CODE >44:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+33E maintext CODE >45:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+33F maintext CODE >47:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+340 maintext CODE >51:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+343 maintext CODE >52:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+345 maintext CODE >53:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+34E maintext CODE >54:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+351 maintext CODE >55:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+356 maintext CODE >56:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+35A maintext CODE >57:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+35E maintext CODE >61:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+361 maintext CODE >62:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+363 maintext CODE >63:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+367 maintext CODE >65:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+369 maintext CODE >66:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+372 maintext CODE >67:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+374 maintext CODE >68:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+375 maintext CODE >74:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+378 maintext CODE >75:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+37A maintext CODE >76:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+383 maintext CODE >77:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+386 maintext CODE >78:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+38B maintext CODE >79:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+38F maintext CODE >80:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+393 maintext CODE >84:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+395 maintext CODE >85:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+39E maintext CODE >86:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+3A1 maintext CODE >87:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+3A2 maintext CODE >88:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+3A3 maintext CODE >91:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+3A6 maintext CODE >92:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+3A8 maintext CODE >93:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+3AC maintext CODE >98:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+3AF maintext CODE >99:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+3B2 maintext CODE >100:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+3B3 maintext CODE >101:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+3BC maintext CODE >102:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+3BE maintext CODE >103:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+3BF maintext CODE >104:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+3C0 maintext CODE >105:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+3C9 maintext CODE >106:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+3CB maintext CODE >107:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+3CD maintext CODE >108:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+3CE maintext CODE >109:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+3CE maintext CODE >110:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+3CF maintext CODE >111:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+3D8 maintext CODE >112:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+3DA maintext CODE >113:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+3DB maintext CODE >114:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+3DC maintext CODE >115:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+3E5 maintext CODE >116:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+3E7 maintext CODE >117:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+3E8 maintext CODE >119:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+3F1 maintext CODE >120:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+3F3 maintext CODE >124:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+3F6 maintext CODE >125:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+3F7 maintext CODE >126:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+3F9 maintext CODE >129:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+3F9 maintext CODE >130:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+3FA maintext CODE >131:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+3FB maintext CODE >132:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
 3FC maintext CODE >42:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
@@ -155,11 +157,11 @@ ltemp2 66 0 ABS 0 - dist/default/production\Relay_Bypass_on_press.X.production.o
 ltemp3 60 0 ABS 0 - dist/default/production\Relay_Bypass_on_press.X.production.obj
 __Hstrings 7FE 0 ABS 0 strings -
 _GPIO 5 0 ABS 0 - dist/default/production\Relay_Bypass_on_press.X.production.obj
-___sp 0 0 STACK 2 stack C:\Users\Benoit\AppData\Local\Temp\s2ng.obj
-_main 676 0 CODE 0 maintext dist/default/production\Relay_Bypass_on_press.X.production.obj
+___sp 0 0 STACK 2 stack C:\Users\Benoit\AppData\Local\Temp\s548.obj
+_main 64E 0 CODE 0 maintext dist/default/production\Relay_Bypass_on_press.X.production.obj
 btemp 5E 0 ABS 0 - dist/default/production\Relay_Bypass_on_press.X.production.obj
 ltemp 5E 0 ABS 0 - dist/default/production\Relay_Bypass_on_press.X.production.obj
-start 0 0 CODE 0 init C:\Users\Benoit\AppData\Local\Temp\s2ng.obj
+start 0 0 CODE 0 init C:\Users\Benoit\AppData\Local\Temp\s548.obj
 ttemp 5E 0 ABS 0 - dist/default/production\Relay_Bypass_on_press.X.production.obj
 wtemp 5E 0 ABS 0 - dist/default/production\Relay_Bypass_on_press.X.production.obj
 __CFG_BOREN$OFF 0 0 ABS 0 - dist/default/production\Relay_Bypass_on_press.X.production.obj
@@ -170,12 +172,12 @@ ttemp1 61 0 ABS 0 - dist/default/production\Relay_Bypass_on_press.X.production.o
 ttemp2 64 0 ABS 0 - dist/default/production\Relay_Bypass_on_press.X.production.obj
 ttemp3 67 0 ABS 0 - dist/default/production\Relay_Bypass_on_press.X.production.obj
 ttemp4 5F 0 ABS 0 - dist/default/production\Relay_Bypass_on_press.X.production.obj
-intlevel0 0 0 CODE 0 functab C:\Users\Benoit\AppData\Local\Temp\s2ng.obj
-intlevel1 0 0 CODE 0 functab C:\Users\Benoit\AppData\Local\Temp\s2ng.obj
-intlevel2 0 0 CODE 0 functab C:\Users\Benoit\AppData\Local\Temp\s2ng.obj
-intlevel3 0 0 CODE 0 functab C:\Users\Benoit\AppData\Local\Temp\s2ng.obj
-intlevel4 0 0 CODE 0 functab C:\Users\Benoit\AppData\Local\Temp\s2ng.obj
-intlevel5 0 0 CODE 0 functab C:\Users\Benoit\AppData\Local\Temp\s2ng.obj
+intlevel0 0 0 CODE 0 functab C:\Users\Benoit\AppData\Local\Temp\s548.obj
+intlevel1 0 0 CODE 0 functab C:\Users\Benoit\AppData\Local\Temp\s548.obj
+intlevel2 0 0 CODE 0 functab C:\Users\Benoit\AppData\Local\Temp\s548.obj
+intlevel3 0 0 CODE 0 functab C:\Users\Benoit\AppData\Local\Temp\s548.obj
+intlevel4 0 0 CODE 0 functab C:\Users\Benoit\AppData\Local\Temp\s548.obj
+intlevel5 0 0 CODE 0 functab C:\Users\Benoit\AppData\Local\Temp\s548.obj
 wtemp0 5E 0 ABS 0 - dist/default/production\Relay_Bypass_on_press.X.production.obj
 wtemp1 60 0 ABS 0 - dist/default/production\Relay_Bypass_on_press.X.production.obj
 wtemp2 62 0 ABS 0 - dist/default/production\Relay_Bypass_on_press.X.production.obj
@@ -199,7 +201,7 @@ __CFG_MCLRE$OFF 0 0 ABS 0 - dist/default/production\Relay_Bypass_on_press.X.prod
 start_initialization 7FA 0 CODE 0 cinit dist/default/production\Relay_Bypass_on_press.X.production.obj
 __pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production\Relay_Bypass_on_press.X.production.obj
 main@press_switch 25 0 BANK0 1 cstackBANK0 dist/default/production\Relay_Bypass_on_press.X.production.obj
-___int_sp 0 0 STACK 2 stack C:\Users\Benoit\AppData\Local\Temp\s2ng.obj
+___int_sp 0 0 STACK 2 stack C:\Users\Benoit\AppData\Local\Temp\s548.obj
 __Hbank0 7FE 0 ABS 0 bank0 -
 __Hbank1 7FE 0 BANK1 1 bank1 -
 __Hcinit 7FE 0 CODE 0 cinit -
@@ -238,17 +240,17 @@ __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
 __Hosccal 7FE 0 CODE 0 osccal -
 __Lintentry 0 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\Benoit\AppData\Local\Temp\s2ng.obj
+reset_vec 0 0 CODE 0 reset_vec C:\Users\Benoit\AppData\Local\Temp\s548.obj
 main@temporary 23 0 BANK0 1 cstackBANK0 dist/default/production\Relay_Bypass_on_press.X.production.obj
-__pmaintext 676 0 CODE 0 maintext dist/default/production\Relay_Bypass_on_press.X.production.obj
+__pmaintext 64E 0 CODE 0 maintext dist/default/production\Relay_Bypass_on_press.X.production.obj
 __Lcommon 7FE 0 ABS 0 common -
 __Lconfig 400E 0 CONFIG 0 config -
 __CFG_CP$OFF 0 0 ABS 0 - dist/default/production\Relay_Bypass_on_press.X.production.obj
 __CFG_WDTE$OFF 0 0 ABS 0 - dist/default/production\Relay_Bypass_on_press.X.production.obj
 main@state 24 0 BANK0 1 cstackBANK0 dist/default/production\Relay_Bypass_on_press.X.production.obj
-___osccal_val 7FE 0 CODE 0 osccal C:\Users\Benoit\AppData\Local\Temp\s2ng.obj
-stackhi 0 0 ABS 0 - C:\Users\Benoit\AppData\Local\Temp\s2ng.obj
-stacklo 0 0 ABS 0 - C:\Users\Benoit\AppData\Local\Temp\s2ng.obj
+___osccal_val 7FE 0 CODE 0 osccal C:\Users\Benoit\AppData\Local\Temp\s548.obj
+stackhi 0 0 ABS 0 - C:\Users\Benoit\AppData\Local\Temp\s548.obj
+stacklo 0 0 ABS 0 - C:\Users\Benoit\AppData\Local\Temp\s548.obj
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
@@ -301,7 +303,7 @@ __CFG_PWRTE$OFF 0 0 ABS 0 - dist/default/production\Relay_Bypass_on_press.X.prod
 # All other numeric quantities are in decimal.
 %SEGMENTS
 cinit 0 3FD 7FA 2 2
-maintext 0 33B 676 C2 2
+maintext 0 327 64E D6 2
 cstackBANK0 1 20 20 6 1
 reset_vec 0 0 0 1 2
 config 0 2007 400E 1 2

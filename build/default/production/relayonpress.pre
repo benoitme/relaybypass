@@ -1141,17 +1141,20 @@ temporary = 0;
 
 if(temporary == 0) {
 if(GP1 == 0) {
-_delay((unsigned long)((5)*(4000000/4000.0)));
+_delay((unsigned long)((15)*(4000000/4000.0)));
 if(GP1 == 0) {
 press_switch = press_switch + 1;
+if(press_switch>10) {
+press_switch = 10;
+}
 }
 }
 if(press_switch == 1) {
 changestate = 1;
-press_switch = press_switch + 1;
+press_switch = 2;
 }
 if(GP1 == 1) {
-_delay((unsigned long)((5)*(4000000/4000.0)));
+_delay((unsigned long)((15)*(4000000/4000.0)));
 if(GP1 == 1) {
 press_switch = 0;
 }
@@ -1161,13 +1164,16 @@ press_switch = 0;
 
 if(temporary == 1) {
 if(GP1 == 0) {
-_delay((unsigned long)((5)*(4000000/4000.0)));
+_delay((unsigned long)((15)*(4000000/4000.0)));
 if(GP1 == 0) {
 press_switch = press_switch + 1;
+if(press_switch>10) {
+press_switch = 10;
+}
 }
 }
 if(GP1 == 1) {
-_delay((unsigned long)((5)*(4000000/4000.0)));
+_delay((unsigned long)((15)*(4000000/4000.0)));
 if(GP1 == 1) {
 state = 0;
 press_switch = 0;
@@ -1175,7 +1181,7 @@ press_switch = 0;
 }
 if(press_switch == 1) {
 changestate = 1;
-press_switch = press_switch + 1;
+press_switch = 2;
 }
 }
 
@@ -1183,21 +1189,21 @@ press_switch = press_switch + 1;
 if(changestate == 1) {
 if(state == 0) {
 GP2 = 1;
-_delay((unsigned long)((50)*(4000000/4000.0)));
+_delay((unsigned long)((20)*(4000000/4000.0)));
 GP0 = 1;
 GP5 = 1;
 GP4 = 0;
-_delay((unsigned long)((30)*(4000000/4000.0)));
+_delay((unsigned long)((20)*(4000000/4000.0)));
 GP2 = 0;
 state = 1;
 }
 else {
 GP2 = 1;
-_delay((unsigned long)((50)*(4000000/4000.0)));
+_delay((unsigned long)((20)*(4000000/4000.0)));
 GP0 = 0;
 GP5 = 0;
 GP4 = 0;
-_delay((unsigned long)((30)*(4000000/4000.0)));
+_delay((unsigned long)((20)*(4000000/4000.0)));
 GP2 = 0;
 state = 0;
 }
