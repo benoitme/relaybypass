@@ -41,10 +41,10 @@ void main(void) {
    // Main loop
    while(1) {
        if(GP3 == 0) { // If the "hold" mode is activated through the switch
-          temporary = 1;
+          temporary = 0;
       }
       else { // If not, normal bypass switching
-          temporary = 0;
+          temporary = 1;
       }
        
        // Normal mode
