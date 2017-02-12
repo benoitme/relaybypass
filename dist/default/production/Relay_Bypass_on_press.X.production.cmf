@@ -11,13 +11,13 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\Benoit\AppData\Local\Temp\s548.obj
-end_init CODE 0 0 0 1 2
-config CONFIG 0 2007 2007 1 2
 $dist/default/production\Relay_Bypass_on_press.X.production.obj
 cinit CODE 0 3FD 3FD 2 2
 maintext CODE 0 327 327 D6 2
 cstackBANK0 BANK0 1 20 20 6 1
+$C:\Users\Benoit\AppData\Local\Temp\sbsk.obj
+end_init CODE 0 0 0 1 2
+config CONFIG 0 2007 2007 1 2
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
 # is described on a single line as follows:
@@ -50,11 +50,11 @@ STRING 1-326 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Relay_Bypass_on_press.X.production.obj
-3FD cinit CODE >158:C:\Users\Benoit\AppData\Local\Temp\s548.
-3FD cinit CODE >161:C:\Users\Benoit\AppData\Local\Temp\s548.
-3FD cinit CODE >167:C:\Users\Benoit\AppData\Local\Temp\s548.
-3FD cinit CODE >169:C:\Users\Benoit\AppData\Local\Temp\s548.
-3FE cinit CODE >170:C:\Users\Benoit\AppData\Local\Temp\s548.
+3FD cinit CODE >158:C:\Users\Benoit\AppData\Local\Temp\sbsk.
+3FD cinit CODE >161:C:\Users\Benoit\AppData\Local\Temp\sbsk.
+3FD cinit CODE >167:C:\Users\Benoit\AppData\Local\Temp\sbsk.
+3FD cinit CODE >169:C:\Users\Benoit\AppData\Local\Temp\sbsk.
+3FE cinit CODE >170:C:\Users\Benoit\AppData\Local\Temp\sbsk.
 327 maintext CODE >15:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
 327 maintext CODE >16:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
 329 maintext CODE >17:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
@@ -72,8 +72,9 @@ $dist/default/production\Relay_Bypass_on_press.X.production.obj
 339 maintext CODE >39:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
 33A maintext CODE >43:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
 33C maintext CODE >44:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-33E maintext CODE >45:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
-33F maintext CODE >47:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+33D maintext CODE >45:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+33E maintext CODE >46:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
+33E maintext CODE >47:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
 340 maintext CODE >51:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
 343 maintext CODE >52:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
 345 maintext CODE >53:C:\Users\Benoit\MPLABXProjects\Relay Bypass on press.X\relayonpress.c
@@ -157,11 +158,11 @@ ltemp2 66 0 ABS 0 - dist/default/production\Relay_Bypass_on_press.X.production.o
 ltemp3 60 0 ABS 0 - dist/default/production\Relay_Bypass_on_press.X.production.obj
 __Hstrings 7FE 0 ABS 0 strings -
 _GPIO 5 0 ABS 0 - dist/default/production\Relay_Bypass_on_press.X.production.obj
-___sp 0 0 STACK 2 stack C:\Users\Benoit\AppData\Local\Temp\s548.obj
+___sp 0 0 STACK 2 stack C:\Users\Benoit\AppData\Local\Temp\sbsk.obj
 _main 64E 0 CODE 0 maintext dist/default/production\Relay_Bypass_on_press.X.production.obj
 btemp 5E 0 ABS 0 - dist/default/production\Relay_Bypass_on_press.X.production.obj
 ltemp 5E 0 ABS 0 - dist/default/production\Relay_Bypass_on_press.X.production.obj
-start 0 0 CODE 0 init C:\Users\Benoit\AppData\Local\Temp\s548.obj
+start 0 0 CODE 0 init C:\Users\Benoit\AppData\Local\Temp\sbsk.obj
 ttemp 5E 0 ABS 0 - dist/default/production\Relay_Bypass_on_press.X.production.obj
 wtemp 5E 0 ABS 0 - dist/default/production\Relay_Bypass_on_press.X.production.obj
 __CFG_BOREN$OFF 0 0 ABS 0 - dist/default/production\Relay_Bypass_on_press.X.production.obj
@@ -172,12 +173,12 @@ ttemp1 61 0 ABS 0 - dist/default/production\Relay_Bypass_on_press.X.production.o
 ttemp2 64 0 ABS 0 - dist/default/production\Relay_Bypass_on_press.X.production.obj
 ttemp3 67 0 ABS 0 - dist/default/production\Relay_Bypass_on_press.X.production.obj
 ttemp4 5F 0 ABS 0 - dist/default/production\Relay_Bypass_on_press.X.production.obj
-intlevel0 0 0 CODE 0 functab C:\Users\Benoit\AppData\Local\Temp\s548.obj
-intlevel1 0 0 CODE 0 functab C:\Users\Benoit\AppData\Local\Temp\s548.obj
-intlevel2 0 0 CODE 0 functab C:\Users\Benoit\AppData\Local\Temp\s548.obj
-intlevel3 0 0 CODE 0 functab C:\Users\Benoit\AppData\Local\Temp\s548.obj
-intlevel4 0 0 CODE 0 functab C:\Users\Benoit\AppData\Local\Temp\s548.obj
-intlevel5 0 0 CODE 0 functab C:\Users\Benoit\AppData\Local\Temp\s548.obj
+intlevel0 0 0 CODE 0 functab C:\Users\Benoit\AppData\Local\Temp\sbsk.obj
+intlevel1 0 0 CODE 0 functab C:\Users\Benoit\AppData\Local\Temp\sbsk.obj
+intlevel2 0 0 CODE 0 functab C:\Users\Benoit\AppData\Local\Temp\sbsk.obj
+intlevel3 0 0 CODE 0 functab C:\Users\Benoit\AppData\Local\Temp\sbsk.obj
+intlevel4 0 0 CODE 0 functab C:\Users\Benoit\AppData\Local\Temp\sbsk.obj
+intlevel5 0 0 CODE 0 functab C:\Users\Benoit\AppData\Local\Temp\sbsk.obj
 wtemp0 5E 0 ABS 0 - dist/default/production\Relay_Bypass_on_press.X.production.obj
 wtemp1 60 0 ABS 0 - dist/default/production\Relay_Bypass_on_press.X.production.obj
 wtemp2 62 0 ABS 0 - dist/default/production\Relay_Bypass_on_press.X.production.obj
@@ -201,7 +202,7 @@ __CFG_MCLRE$OFF 0 0 ABS 0 - dist/default/production\Relay_Bypass_on_press.X.prod
 start_initialization 7FA 0 CODE 0 cinit dist/default/production\Relay_Bypass_on_press.X.production.obj
 __pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production\Relay_Bypass_on_press.X.production.obj
 main@press_switch 25 0 BANK0 1 cstackBANK0 dist/default/production\Relay_Bypass_on_press.X.production.obj
-___int_sp 0 0 STACK 2 stack C:\Users\Benoit\AppData\Local\Temp\s548.obj
+___int_sp 0 0 STACK 2 stack C:\Users\Benoit\AppData\Local\Temp\sbsk.obj
 __Hbank0 7FE 0 ABS 0 bank0 -
 __Hbank1 7FE 0 BANK1 1 bank1 -
 __Hcinit 7FE 0 CODE 0 cinit -
@@ -240,7 +241,7 @@ __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
 __Hosccal 7FE 0 CODE 0 osccal -
 __Lintentry 0 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\Benoit\AppData\Local\Temp\s548.obj
+reset_vec 0 0 CODE 0 reset_vec C:\Users\Benoit\AppData\Local\Temp\sbsk.obj
 main@temporary 23 0 BANK0 1 cstackBANK0 dist/default/production\Relay_Bypass_on_press.X.production.obj
 __pmaintext 64E 0 CODE 0 maintext dist/default/production\Relay_Bypass_on_press.X.production.obj
 __Lcommon 7FE 0 ABS 0 common -
@@ -248,9 +249,9 @@ __Lconfig 400E 0 CONFIG 0 config -
 __CFG_CP$OFF 0 0 ABS 0 - dist/default/production\Relay_Bypass_on_press.X.production.obj
 __CFG_WDTE$OFF 0 0 ABS 0 - dist/default/production\Relay_Bypass_on_press.X.production.obj
 main@state 24 0 BANK0 1 cstackBANK0 dist/default/production\Relay_Bypass_on_press.X.production.obj
-___osccal_val 7FE 0 CODE 0 osccal C:\Users\Benoit\AppData\Local\Temp\s548.obj
-stackhi 0 0 ABS 0 - C:\Users\Benoit\AppData\Local\Temp\s548.obj
-stacklo 0 0 ABS 0 - C:\Users\Benoit\AppData\Local\Temp\s548.obj
+___osccal_val 7FE 0 CODE 0 osccal C:\Users\Benoit\AppData\Local\Temp\sbsk.obj
+stackhi 0 0 ABS 0 - C:\Users\Benoit\AppData\Local\Temp\sbsk.obj
+stacklo 0 0 ABS 0 - C:\Users\Benoit\AppData\Local\Temp\sbsk.obj
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -

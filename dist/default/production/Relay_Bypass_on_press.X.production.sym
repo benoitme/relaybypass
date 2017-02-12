@@ -138,7 +138,7 @@ cstackBANK0 20 25 BANK0 20 1
 maintext 64E 7F9 CODE 64E 0
 %locals
 dist/default/production\Relay_Bypass_on_press.X.production.obj
-C:\Users\Benoit\AppData\Local\Temp\s548.
+C:\Users\Benoit\AppData\Local\Temp\sbsk.
 158 3FD 0 CODE 0
 161 3FD 0 CODE 0
 167 3FD 0 CODE 0
@@ -162,8 +162,9 @@ relayonpress.c
 39 339 0 CODE 0
 43 33A 0 CODE 0
 44 33C 0 CODE 0
-45 33E 0 CODE 0
-47 33F 0 CODE 0
+45 33D 0 CODE 0
+46 33E 0 CODE 0
+47 33E 0 CODE 0
 51 340 0 CODE 0
 52 343 0 CODE 0
 53 345 0 CODE 0

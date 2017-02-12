@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC LITE Macro Assembler V1.36 build -262312587 
-                                                                                               Sun Feb 05 17:03:41 2017
+                                                                                               Mon Feb 06 13:44:27 2017
 
 Microchip Technology Omniscient Code Generator v1.36 (Free mode) build 201601150325
      1                           	processor	12F675
@@ -191,36 +191,36 @@ Microchip Technology Omniscient Code Generator v1.36 (Free mode) build 201601150
    185                           ;relayonpress.c: 38: uint8_t press_switch;
    186                           ;relayonpress.c: 39: press_switch = 0;
    187  0339  01A5               	clrf	main@press_switch
-   188  033A                     l675:	
+   188  033A                     l673:	
    189                           ;relayonpress.c: 42: while(1) {
    190                           
    191                           
    192                           ;relayonpress.c: 43: if(GP3 == 0) {
    193  033A  1985               	btfsc	5,3	;volatile
-   194  033B  2B3F               	goto	l679
+   194  033B  2B3E               	goto	l38
    195                           
-   196                           ;relayonpress.c: 44: temporary = 1;
+   196                           ;relayonpress.c: 44: temporary = 0;
    197  033C  01A3               	clrf	main@temporary
-   198  033D  0AA3               	incf	main@temporary,f
-   199                           
-   200                           ;relayonpress.c: 45: }
-   201  033E  2B40               	goto	l681
-   202  033F                     l679:	
-   203                           
-   204                           ;relayonpress.c: 46: else {
-   205                           ;relayonpress.c: 47: temporary = 0;
-   206  033F  01A3               	clrf	main@temporary
-   207  0340                     l681:	
+   198                           
+   199                           ;relayonpress.c: 45: }
+   200  033D  2B40               	goto	l677
+   201  033E                     l38:	
+   202                           
+   203                           ;relayonpress.c: 46: else {
+   204                           ;relayonpress.c: 47: temporary = 1;
+   205  033E  01A3               	clrf	main@temporary
+   206  033F  0AA3               	incf	main@temporary,f
+   207  0340                     l677:	
    208                           
    209                           ;relayonpress.c: 48: }
    210                           ;relayonpress.c: 51: if(temporary == 0) {
    211  0340  0823               	movf	main@temporary,w
    212  0341  1D03               	btfss	3,2
-   213  0342  2B75               	goto	l709
+   213  0342  2B75               	goto	l705
    214                           
    215                           ;relayonpress.c: 52: if(GP1 == 0) {
    216  0343  1885               	btfsc	5,1	;volatile
-   217  0344  2B5E               	goto	l695
+   217  0344  2B5E               	goto	l691
    218                           
    219                           ;relayonpress.c: 53: _delay((unsigned long)((15)*(4000000/4000.0)));
    220  0345  3014               	movlw	20
@@ -237,7 +237,7 @@ Microchip Technology Omniscient Code Generator v1.36 (Free mode) build 201601150
    231                           ;relayonpress.c: 54: if(GP1 == 0) {
    232  034E  1283               	bcf	3,5	;RP0=0, select bank0
    233  034F  1885               	btfsc	5,1	;volatile
-   234  0350  2B5E               	goto	l695
+   234  0350  2B5E               	goto	l691
    235                           
    236                           ;relayonpress.c: 55: press_switch = press_switch + 1;
    237  0351  0825               	movf	main@press_switch,w
@@ -250,14 +250,14 @@ Microchip Technology Omniscient Code Generator v1.36 (Free mode) build 201601150
    244  0356  300B               	movlw	11
    245  0357  0225               	subwf	main@press_switch,w
    246  0358  1C03               	skipc
-   247  0359  2B5E               	goto	l695
+   247  0359  2B5E               	goto	l691
    248                           
    249                           ;relayonpress.c: 57: press_switch = 10;
    250  035A  300A               	movlw	10
    251  035B  00A0               	movwf	??_main
    252  035C  0820               	movf	??_main,w
    253  035D  00A5               	movwf	main@press_switch
-   254  035E                     l695:	
+   254  035E                     l691:	
    255                           
    256                           ;relayonpress.c: 58: }
    257                           ;relayonpress.c: 59: }
@@ -265,7 +265,7 @@ Microchip Technology Omniscient Code Generator v1.36 (Free mode) build 201601150
    259                           ;relayonpress.c: 61: if(press_switch == 1) {
    260  035E  0325               	decf	main@press_switch,w
    261  035F  1D03               	btfss	3,2
-   262  0360  2B67               	goto	l701
+   262  0360  2B67               	goto	l697
    263                           
    264                           ;relayonpress.c: 62: changestate = 1;
    265  0361  01A2               	clrf	main@changestate
@@ -276,12 +276,12 @@ Microchip Technology Omniscient Code Generator v1.36 (Free mode) build 201601150
    270  0364  00A0               	movwf	??_main
    271  0365  0820               	movf	??_main,w
    272  0366  00A5               	movwf	main@press_switch
-   273  0367                     l701:	
+   273  0367                     l697:	
    274                           
    275                           ;relayonpress.c: 64: }
    276                           ;relayonpress.c: 65: if(GP1 == 1) {
    277  0367  1C85               	btfss	5,1	;volatile
-   278  0368  2B75               	goto	l709
+   278  0368  2B75               	goto	l705
    279                           
    280                           ;relayonpress.c: 66: _delay((unsigned long)((15)*(4000000/4000.0)));
    281  0369  3014               	movlw	20
@@ -301,7 +301,7 @@ Microchip Technology Omniscient Code Generator v1.36 (Free mode) build 201601150
    295                           
    296                           ;relayonpress.c: 68: press_switch = 0;
    297  0374  01A5               	clrf	main@press_switch
-   298  0375                     l709:	
+   298  0375                     l705:	
    299                           
    300                           ;relayonpress.c: 69: }
    301                           ;relayonpress.c: 70: }
@@ -309,11 +309,11 @@ Microchip Technology Omniscient Code Generator v1.36 (Free mode) build 201601150
    303                           ;relayonpress.c: 74: if(temporary == 1) {
    304  0375  0323               	decf	main@temporary,w
    305  0376  1D03               	btfss	3,2
-   306  0377  2BAC               	goto	l737
+   306  0377  2BAC               	goto	l733
    307                           
    308                           ;relayonpress.c: 75: if(GP1 == 0) {
    309  0378  1885               	btfsc	5,1	;volatile
-   310  0379  2B93               	goto	l723
+   310  0379  2B93               	goto	l719
    311                           
    312                           ;relayonpress.c: 76: _delay((unsigned long)((15)*(4000000/4000.0)));
    313  037A  3014               	movlw	20
@@ -330,7 +330,7 @@ Microchip Technology Omniscient Code Generator v1.36 (Free mode) build 201601150
    324                           ;relayonpress.c: 77: if(GP1 == 0) {
    325  0383  1283               	bcf	3,5	;RP0=0, select bank0
    326  0384  1885               	btfsc	5,1	;volatile
-   327  0385  2B93               	goto	l723
+   327  0385  2B93               	goto	l719
    328                           
    329                           ;relayonpress.c: 78: press_switch = press_switch + 1;
    330  0386  0825               	movf	main@press_switch,w
@@ -343,21 +343,21 @@ Microchip Technology Omniscient Code Generator v1.36 (Free mode) build 201601150
    337  038B  300B               	movlw	11
    338  038C  0225               	subwf	main@press_switch,w
    339  038D  1C03               	skipc
-   340  038E  2B93               	goto	l723
+   340  038E  2B93               	goto	l719
    341                           
    342                           ;relayonpress.c: 80: press_switch = 10;
    343  038F  300A               	movlw	10
    344  0390  00A0               	movwf	??_main
    345  0391  0820               	movf	??_main,w
    346  0392  00A5               	movwf	main@press_switch
-   347  0393                     l723:	
+   347  0393                     l719:	
    348                           
    349                           ;relayonpress.c: 81: }
    350                           ;relayonpress.c: 82: }
    351                           ;relayonpress.c: 83: }
    352                           ;relayonpress.c: 84: if(GP1 == 1) {
    353  0393  1C85               	btfss	5,1	;volatile
-   354  0394  2BA3               	goto	l731
+   354  0394  2BA3               	goto	l727
    355                           
    356                           ;relayonpress.c: 85: _delay((unsigned long)((15)*(4000000/4000.0)));
    357  0395  3014               	movlw	20
@@ -374,21 +374,21 @@ Microchip Technology Omniscient Code Generator v1.36 (Free mode) build 201601150
    368                           ;relayonpress.c: 86: if(GP1 == 1) {
    369  039E  1283               	bcf	3,5	;RP0=0, select bank0
    370  039F  1C85               	btfss	5,1	;volatile
-   371  03A0  2BA3               	goto	l731
+   371  03A0  2BA3               	goto	l727
    372                           
    373                           ;relayonpress.c: 87: state = 0;
    374  03A1  01A4               	clrf	main@state
    375                           
    376                           ;relayonpress.c: 88: press_switch = 0;
    377  03A2  01A5               	clrf	main@press_switch
-   378  03A3                     l731:	
+   378  03A3                     l727:	
    379                           
    380                           ;relayonpress.c: 89: }
    381                           ;relayonpress.c: 90: }
    382                           ;relayonpress.c: 91: if(press_switch == 1) {
    383  03A3  0325               	decf	main@press_switch,w
    384  03A4  1D03               	btfss	3,2
-   385  03A5  2BAC               	goto	l737
+   385  03A5  2BAC               	goto	l733
    386                           
    387                           ;relayonpress.c: 92: changestate = 1;
    388  03A6  01A2               	clrf	main@changestate
@@ -399,14 +399,14 @@ Microchip Technology Omniscient Code Generator v1.36 (Free mode) build 201601150
    393  03A9  00A0               	movwf	??_main
    394  03AA  0820               	movf	??_main,w
    395  03AB  00A5               	movwf	main@press_switch
-   396  03AC                     l737:	
+   396  03AC                     l733:	
    397                           
    398                           ;relayonpress.c: 94: }
    399                           ;relayonpress.c: 95: }
    400                           ;relayonpress.c: 98: if(changestate == 1) {
    401  03AC  0322               	decf	main@changestate,w
    402  03AD  1D03               	btfss	3,2
-   403  03AE  2BF3               	goto	l769
+   403  03AE  2BF3               	goto	l765
    404                           
    405                           ;relayonpress.c: 99: if(state == 0) {
    406  03AF  0824               	movf	main@state,w
@@ -459,7 +459,7 @@ Microchip Technology Omniscient Code Generator v1.36 (Free mode) build 201601150
    453  03CC  0AA4               	incf	main@state,f
    454                           
    455                           ;relayonpress.c: 108: }
-   456  03CD  2BE8               	goto	l767
+   456  03CD  2BE8               	goto	l763
    457  03CE                     l55:	
    458                           
    459                           ;relayonpress.c: 109: else {
@@ -506,7 +506,7 @@ Microchip Technology Omniscient Code Generator v1.36 (Free mode) build 201601150
    500                           
    501                           ;relayonpress.c: 117: state = 0;
    502  03E7  01A4               	clrf	main@state
-   503  03E8                     l767:	
+   503  03E8                     l763:	
    504                           
    505                           ;relayonpress.c: 118: }
    506                           ;relayonpress.c: 119: _delay((unsigned long)((10)*(4000000/4000.0)));
@@ -524,7 +524,7 @@ Microchip Technology Omniscient Code Generator v1.36 (Free mode) build 201601150
    518                           ;relayonpress.c: 120: changestate=0;
    519  03F1  1283               	bcf	3,5	;RP0=0, select bank0
    520  03F2  01A2               	clrf	main@changestate
-   521  03F3                     l769:	
+   521  03F3                     l765:	
    522                           
    523                           ;relayonpress.c: 121: }
    524                           ;relayonpress.c: 124: if (state == 1) {
@@ -554,7 +554,7 @@ Microchip Technology Omniscient Code Generator v1.36 (Free mode) build 201601150
    548                           
    549                           ;relayonpress.c: 132: GP4 = 0;
    550  03FB  1205               	bcf	5,4	;volatile
-   551  03FC  2B3A               	goto	l675
+   551  03FC  2B3A               	goto	l673
    552  03FD                     __end_of_main:	
    553  005E                     btemp	set	94	;btemp
    554  005E                     wtemp	set	94
@@ -637,13 +637,13 @@ DATA                 0      0       0       6        0.0%
 
 
 Microchip Technology PIC Macro Assembler V1.36 build -262312587 
-Symbol Table                                                                                   Sun Feb 05 17:03:41 2017
+Symbol Table                                                                                   Mon Feb 06 13:44:27 2017
 
-            __CFG_CP$OFF 0000                       l55 03CE                       l57 03F9  
-                    l701 0367                      l731 03A3                      l723 0393  
-                    l709 0375                      l737 03AC                      l681 0340  
-                    l675 033A                      l767 03E8                      l695 035E  
-                    l679 033F                      l769 03F3                      _GP0 0028  
+            __CFG_CP$OFF 0000                       l38 033E                       l55 03CE  
+                     l57 03F9                      l705 0375                      l733 03AC  
+                    l727 03A3                      l719 0393                      l673 033A  
+                    l763 03E8                      l691 035E                      l765 03F3  
+                    l677 0340                      l697 0367                      _GP0 0028  
                     _GP1 0029                      _GP2 002A                      _GP3 002B  
                     _GP4 002C                      _GP5 002D                      u407 0399  
                     u417 03B7             __CFG_CPD$OFF 0000                      u427 03C4  
