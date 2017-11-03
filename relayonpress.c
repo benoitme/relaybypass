@@ -1,10 +1,10 @@
 /*
-* File:   relayonpress.c
-* Author: Benoit
-*
-* Created on 5/02/2017
-* Updated by KSM on 2017/11/03
-*/
+ * File:   relayonpress.c
+ * Author: Benoit
+ *
+ * Created on 5/02/2017
+ * Updated by KSM on 2017/11/03
+ */
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -15,29 +15,44 @@
 //------------------------------------------------------------------------------
 // Updated by KSM 2017/11/03
 
-// Для частоты таймера 1 = 4MHz
-//#define INTS_PER_SECOND 	4      // (4000000/(4*4*65536)) = 3,814697265625
+#define INTS_PER_SECOND 	20
 
-// Для частоты таймера 1 = 8MHz
-#define INTS_PER_SECOND 	8      // (8000000/(4*4*65536)) = 7,62939453125
-
-uint8_t lp_counter = 0;	// Счетчик срабатываний таймера 1 (8 раз в секунду)
+uint8_t lp_counter = 0;	// Счетчик срабатываний таймера 1.
 uint8_t lp_check = 0;	// Флаг контроля длинного нажатия.
 
-// Эта функция возрващает 1, если таймер отработал 1 секунду или больше.
+// Эта функция возвращает 1, если таймер отработал одну секунду или больше.
 int is_1sec_elapsed(void)
 {
 	return ( lp_counter >= INTS_PER_SECOND ? 1 : 0 );
 }
 
-// Эта функция вызывается каждый раз при срабатывании таймера 1
-#INT_TIMER1                        
-void clock_isr()                    
+void timer_init()
 {
-    // Если разрешен контроль длинного нажатия - считаем тики.
-    if ( lp_check ) {
-    	if ( is_1sec_elapsed() == 0 ) {
-    		lp_counter = lp_counter + 1;
+    GIE = 1;
+    PEIE = 1;
+    TMR1IE = 1;
+    
+    TMR1IF = 0;
+    TMR1H  = 0x3C;	// 50 ms
+    TMR1L  = 0xAF;
+    TMR1ON = 1;
+}
+
+// Эта функция вызывается каждый раз при срабатывании таймера 1
+// #INT_TIMER1                        
+void interrupt ISR()
+{
+    if ( TMR1IF ) 
+    {    	
+        TMR1H  = 0x3C;
+        TMR1L  = 0xAF;
+        TMR1IF = 0;
+
+	    // Если разрешен контроль длинного нажатия - считаем тики.
+    	if ( lp_check ) {
+    		if ( is_1sec_elapsed() == 0 ) {
+    			lp_counter = lp_counter + 1;
+    		}	
     	}
     }
 }
@@ -64,9 +79,7 @@ void main( void )
 	uint8_t press_switch = 0; 	// variable to detect if the switch is pressed
 
 	// KSM - Настроим таймер 1 для контроля длительности нажатия
-	setup_timer_1(T1_INTERNAL | T1_DIV_BY_4);
-	enable_interrupts(INT_TIMER1);
-	enable_interrupts(GLOBAL);
+	timer_init();
 
 	// Main loop
 	while ( 1 ) 
