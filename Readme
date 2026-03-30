@@ -1,25 +1,29 @@
 # 🎸 Guitar Pedal Relay Bypass (PIC12F675)
+
 A silent switching system for guitar effects pedals. This implementation uses a **Microchip PIC12F675** microcontroller to control a relay and photoFET, providing a reliable "soft-switch" experience.
 
 ---
 
 ## 📖 Context
+
 This code is the result of an extensive research series on relay bypass systems. To understand the electronics and the logic behind the code, visit the **Coda Effects** blog (www.coda-effects.com):
 
 * **[Relay Bypass: conception and step by step guide](https://www.coda-effects.com/2016/04/relay-bypass-conception-and-relay.html)** - Original logic and step-by-step build guide.
 * **[Relay Bypasswith anti pop system: noiseless and clickless true bypass](https://www.coda-effects.com/2016/08/relay-bypass-with-anti-pop-system.html)** - Addition of the photoFET for silent operation.
-* **[Relay Bypass: final code](https://www.coda-effects.com/2017/02/relay-bypass-final-code.html)** - Final version of the code (like the one here!) with explanations
+* **[Relay Bypass: final code](https://www.coda-effects.com/2017/02/relay-bypass-final-code.html)** - Final version of the code (like the one here!) with explanations.
 
 ---
 
 ## ✨ Features
+
 * **Soft-touch switching:** Compatible with momentary (Normally Open) footswitches.
 * **Non-latching Relay Support:** Optimized for standard 5V non-latching relays.
 * **Debounced input:** Software filtering to prevent accidental double-triggering.
 * **Low power consumption:** Minimal current draw, ideal for battery-powered pedals.
 * **Status LED:** Integrated LED control with the bypass state.
 
-### Components:
+## 🛠 Components
+
 * **MCU:** PIC12F675
 * **Relay:** 5V Non-latching relay (Takamisawa NA05W-K).
 * **photoFET:** TLP222A.
@@ -27,14 +31,16 @@ This code is the result of an extensive research series on relay bypass systems.
 * **Voltage:** 5V DC (regulated from the pedal's 9V supply).
 
 ## 🚀 Compilation & Flashing
+
 This code is written in **C** for the **XC8 compiler**.
 
-1.  Open the project in **MPLAB X IDE**.
-2.  Ensure the configuration bits are set for **Internal Oscillator (INTOSC)** to free up GP4/GP5.
-3.  Disable **MCLR** in the config bits if you want to use Pin 4 as a general I/O (otherwise, pull it to VDD via a 10k resistor).
-4.  Flash the hex file using a **PICkit 3/4** or any compatible programmer.
+1. Open the project in **MPLAB X IDE**.
+2. Ensure the configuration bits are set for **Internal Oscillator (INTOSC)** to free up GP4/GP5.
+3. Disable **MCLR** in the config bits if you want to use Pin 4 as a general I/O (otherwise, pull it to VDD via a 10k resistor).
+4. Flash the hex file using a **PICkit 3/4** or any compatible programmer.
 
 ## ⚖️ License
+
 Licensed under the **MIT License**. You are free to use this in your own builds or commercial products. See `LICENSE` for details.
 
 ---
